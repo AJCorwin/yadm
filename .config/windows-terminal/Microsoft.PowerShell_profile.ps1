@@ -10,5 +10,7 @@ oh-my-posh init pwsh --config ~/.FirewallTheme.omp.json | Invoke-Expression
 
 # Alias
 Set-Alias grep findstr
+Set-Alias nano notepad
+Set-Alias touch New-Item
 function ghr { set-location "G:\Github-Repos" }
 function gcode { set-location "G:\Code" }
