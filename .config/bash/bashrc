@@ -23,3 +23,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'
+
+eval "$(oh-my-posh --init --shell bash --config {XDG_CONFIG_HOME:-$HOME/.config/windows-terminal}/.FirewallTheme.omp.json)"
+printf "\033c"
