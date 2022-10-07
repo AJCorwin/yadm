@@ -72,7 +72,7 @@
           "type": "time"
         },
         {
-          "background": "#2e9599",
+          "background": "#000000",
           "background_templates": [
             "{{ if gt .Code 0 }}red{{ end }}"
           ],
