@@ -103,3 +103,7 @@ source $ZSH/oh-my-zsh.sh
 if [ -f "$HOME/.local/bin/lvim" ] ; then
   alias vim="$HOME/.local/bin/lvim"
 fi
+
+if [ -d "$HOME/.emacs.d/bin" ] ; then
+    PATH="$HOME/.emacs.d/bin:$PATH"
+fi
