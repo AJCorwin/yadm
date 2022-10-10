@@ -99,11 +99,3 @@ source "$HOME/.profile"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-if [ -f "$HOME/.local/bin/lvim" ] ; then
-  alias vim="$HOME/.local/bin/lvim"
-fi
-
-if [ -d "$HOME/.emacs.d/bin" ] ; then
-    PATH="$HOME/.emacs.d/bin:$PATH"
-fi
