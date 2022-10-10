@@ -15,5 +15,5 @@ if [ -f "$HOME/.local/bin/lvim" ] ; then
 fi
 
 if [ -d "$HOME/.emacs.d/bin" ] ; then
-    PATH="$HOME/.emacs.d/bin:$PATH"
+    export PATH="$HOME/.emacs.d/bin:$PATH"
 fi
