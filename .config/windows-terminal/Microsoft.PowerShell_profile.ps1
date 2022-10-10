@@ -9,6 +9,7 @@ oh-my-posh init pwsh --config ~/.FirewallTheme.omp.json | Invoke-Expression
 
 
 # Alias
+Set-Alias vim nvim
 Set-Alias grep findstr
 Set-Alias nano notepad
 Set-Alias touch New-Item
