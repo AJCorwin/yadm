@@ -72,7 +72,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/.profile
+source $.profile
 
 # User configuration
 
