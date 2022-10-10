@@ -63,7 +63,7 @@ ZSH_THEME="agnoster"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM= "$HOME/.config/zsh/"
+#ZSH_CUSTOM= "$HOME/.config/zsh/"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -72,7 +72,7 @@ ZSH_CUSTOM= "$HOME/.config/zsh/"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/.oh-my-zsh.sh
+source $ZSH/.profile
 
 # User configuration
 
