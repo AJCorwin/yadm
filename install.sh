@@ -5,15 +5,18 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-sudo apt update && sudo apt upgrade
+apt update && sudo apt upgrade
 
-sudo apt install -y yadm dos2unix
+apt install -y yadm dos2unix
+
+rm ~/.bashrc
+rm ~/.zshrc
 
 yadm clone https://github.com/AJCorwin/yadm.git
 
-(echo) | sudo add-apt-repository ppa:kelleyk/emacs
+(echo) | add-apt-repository ppa:kelleyk/emacs
 
-sudo apt update && sudo apt install -y build-essential procps curl file git powerline fonts-powerline neovim fd-find ripgrep shellcheck pandoc emacs28 zsh pip
+apt update && apt install -y build-essential procps curl file git powerline fonts-powerline neovim fd-find ripgrep shellcheck pandoc emacs28 zsh pip
 
 (echo) | sh -d "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
