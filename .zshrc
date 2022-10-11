@@ -3,7 +3,7 @@
 ZSH_THEME="firewalltheme"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.config/zsh/themes/
+ZSH_CUSTOM=$HOME/.myconfig/zsh/themes/
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
