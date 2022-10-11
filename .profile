@@ -17,3 +17,9 @@ fi
 if [ -d "$HOME/.emacs.d/bin" ] ; then
     export PATH="$HOME/.emacs.d/bin:$PATH"
 fi
+
+if [ -d "$HOME/.doom.d/" ] ; then
+    export DOOMDIR="$HOME/.config/.doom.d"
+fi
+
+export DOOMDIR="$HOME/.config/doom"
