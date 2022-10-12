@@ -13,6 +13,6 @@ if ! [ -x "$(command -v whois)" ]; then
   sudo whois --noconfirm
 fi
 
-
+yadm checkout "/home/dev"
 
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
