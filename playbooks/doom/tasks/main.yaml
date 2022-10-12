@@ -1,19 +1,19 @@
 ---
 
 - name: Add emacs repo to the OS
-  become: yes
-  ansible.builtin.apt_repository:
+   become: yes
+   ansible.builtin.apt_repository:
     repo: deb ppa:kelleyk/emacs
     state: present
 
 - name: Update apt-get repo and cache
-  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
 
 - name: Upgrade all apt packages
-  apt: upgrade=dist force_apt_get=yes
+   apt: upgrade=dist force_apt_get=yes
 
 - name: Install fd-find
-  ansible.builtin.apt:
+   ansible.builtin.apt:
     name: fd-find
     state: present
 
@@ -25,7 +25,7 @@
 
 
 - name: Clone
-  ansible.builtin.git:
+   ansible.builtin.git:
     clone: yes
     depth: 1
     dest: "{{ ansible_user_dir }}~/.emacs.d"
@@ -37,14 +37,14 @@
 
 
 - name: Install
-  make:
+   make:
     chdir: "{{ ansible_user_dir }}/~/.emacs.d/bin/doom"
     target: install
-  become: yes
-  when: clone.changed
+   become: yes
+   when: clone.changed
 
 - name: run doom doctor for doom emacs
-  ansible.builtin.shell: doom doctor    
+   ansible.builtin.shell: doom doctor    
 
-#- name: Run doom sync for doom emacs
-# ansible.builtin.shell: doom sync
+- name: Run doom sync for doom emacs
+   ansible.builtin.shell: doom sync
