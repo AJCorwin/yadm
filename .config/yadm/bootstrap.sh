@@ -16,4 +16,10 @@ fi
 
 yadm checkout "/home/dev"
 
+# change to base requirements folder
+cd "$HOME/playbooks"
+
+# Update Galaxy
+ansbiel-galaxy insatll -r requirements.yml
+
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
