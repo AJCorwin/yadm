@@ -1,3 +1,5 @@
 default_roles:
   - doom
   - python
+    zsh
+    oh-my-zsh
