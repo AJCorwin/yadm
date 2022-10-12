@@ -1,5 +1,16 @@
 ---
-if ! [ -x "$(command fc-list | grep "$Hack"$)" ]; then
-  sudo fonts-hack-ttf --noconfirm
-fi
+- name: ensure fonts directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
 
+- name: Hack exists
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Hack*Nerd*Font*Complete*"
+  register: hack_exists
+  ignore_errors: yes
+
+- name: Download Hack
+  when: hack_exists is failed
+  ansible.builtin.apt:
+    name: fonts-hack-ttf
+    state: present
