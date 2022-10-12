@@ -1,4 +1,4 @@
 - src: doom
 - src: python
-  src: zsh
-  src: oh-my-zsh
+- src: zsh
+- src: oh-my-zsh
