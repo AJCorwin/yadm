@@ -3,8 +3,8 @@
 set -e
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install -y ansible dos2unix whois
-
+sudo apt-get install -y ansible powerline whois pip fonts-hack-ttf dos2unix fonts-powerline
+ 
 
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"
@@ -28,5 +28,6 @@ ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/m
 
 cd "$HOME"
 yadm checkout "/home/dev"
-. ~/.zshrc
+sudo chsh -s $(which zsh)
+zsh
 exec zsh
