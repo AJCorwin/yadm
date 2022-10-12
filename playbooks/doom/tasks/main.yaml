@@ -1,4 +1,4 @@
-i---
+---
 
 - name: Add apt_repository
   apt_repository:

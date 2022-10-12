@@ -14,3 +14,9 @@
   ansible.builtin.apt:
     name: fonts-hack-ttf
     state: present
+
+- name: Change the widget font to "Serif 12"
+  community.general.gconftool2:
+    key: "/desktop/gnome/interface/font_name"
+    value_type: "string"
+    value: "Serif 12"    
