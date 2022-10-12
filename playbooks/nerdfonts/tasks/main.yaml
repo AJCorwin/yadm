@@ -1,16 +1,5 @@
 ---
-- name: Clone a repo with separate git directory
-  ansible.builtin.git:
-    repo: https://github.com/ryanoasis/nerd-fonts.git
-    dest: $HOME/nerd-fonts
-
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
-  ansible.builtin.shell: chdir=$HOME/nerd-fonts/ ./install.sh
-
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
-  ansible.builtin.shell: chdir=$HOME
-
-- name: Execute the command in remote shell; stdout goes to the specified file on the remote
-  ansible.builtin.shell: rm nerd-fonts/ -r
-  become: yes
+if ! [ -x "$(command fc-list | grep "$Hack"$)" ]; then
+  sudo fonts-hack-ttf --noconfirm
+fi
 
