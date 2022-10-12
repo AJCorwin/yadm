@@ -20,6 +20,6 @@ yadm checkout "/home/dev"
 cd "$HOME/playbooks"
 
 # Update Galaxy
-ansbiel-galaxy insatll -r requirements.yml
+ansbiel-galaxy install -r requirements.yml
 
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
