@@ -1,5 +1,5 @@
 default_roles:
   - doom
   - python
-  - zsh
+  - nerdfonts
   - oh-my-zsh

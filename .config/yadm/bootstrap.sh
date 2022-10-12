@@ -14,8 +14,6 @@ if ! [ -x "$(command -v whois)" ]; then
   sudo whois --noconfirm
 fi
 
-yadm checkout "/home/dev"
-
 # change to base requirements folder
 cd "$HOME/playbooks"
 
@@ -23,3 +21,8 @@ cd "$HOME/playbooks"
 # ansible-galaxy install -r requirements.yml
 
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@"
+
+cd "$HOME"
+yadm checkout "/home/dev"
+. ~/.zshrc
+exec zsh
