@@ -1,6 +1,7 @@
 ---
 
 - name: Add emacs repo to the OS
+  become: yes
   ansible.builtin.apt_repository:
     repo: deb ppa:kelleyk/emacs
     state: present
