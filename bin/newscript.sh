@@ -8,6 +8,7 @@ CONFIG_DIR="$HOME/.config/dotfiles"
 DOTFILES_DIR="$HOME/.dotfiles"
 SSH_DIR="$HOME/.ssh"
 
+
 if ! [ -x "$(command -v ansible)" ]; then
 	apt-get install ansible -y
 fi
@@ -15,24 +16,8 @@ fi
 if ! [ -x "$(command -v git)" ]; then
 	apt-get install git -y
 fi
-
-# Generate SSH keys
-if ! [[ -f "$HOME/.ssh/authorized_keys" ]]; then
-  mkdir -p "$HOME/.ssh"
-
-  chmod 700 "$HOME/.ssh"
-
-  ssh-keygen -b 4096 -t rsa -f "$HOME/.ssh/id_rsa" -N "" -C "$USER@$HOSTNAME"
-
-  cat "$HOME/.ssh/id_rsa.pub" >> "$HOME/.ssh/authorized_keys"
-fi
-
-# Clone repository
-if ! [[ -d "$HOME/.dotfiles" ]]; then
-  git clone "https://github.com/AJCorwin/yadm.git" "$HOME/"
-  echo "Repo Cloned!"
-else
-  git -C "$HOME/" pull
+if ! [ -x "$(command -v whois)" ]; then
+	apt-get install whois -y
 fi
 
 # Update Galaxy

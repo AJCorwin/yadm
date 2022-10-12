@@ -7,12 +7,10 @@ fi
 
 apt update && sudo apt upgrade
 
-apt install -y yadm dos2unix
+apt install -y yadm dos2unix ansible
 
 rm ~/.bashrc
 rm ~/.zshrc
-
-yadm clone https://github.com/AJCorwin/yadm.git
 
 (echo) | add-apt-repository ppa:kelleyk/emacs
 
