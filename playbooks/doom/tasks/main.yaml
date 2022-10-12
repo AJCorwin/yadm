@@ -45,6 +45,6 @@
 
 - name: run doom doctor for doom emacs
   ansible.builtin.shell: doom doctor    
-  
-- name: Run doom sync for doom emacs
-  ansible.builtin.shell: doom sync
+
+#- name: Run doom sync for doom emacs
+# ansible.builtin.shell: doom sync
