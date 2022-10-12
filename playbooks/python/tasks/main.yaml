@@ -1,3 +1,7 @@
+- name: Install Pip3
+  ansible.builtin.apt:
+    name: pip
+    state: present
 
 - name: Install numpy
   ansible.builtin.pip:
