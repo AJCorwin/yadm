@@ -47,7 +47,7 @@
   ansible.builtin.pip:
     name: matplotlib
    
-- name: Install ntlk
+- name: Install nltk
   ansible.builtin.pip:
-    name: ntlk
+    name: nltk
     
