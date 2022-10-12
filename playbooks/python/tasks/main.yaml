@@ -1,8 +1,4 @@
-- name: Install python pip
-    name: pip
-    extra_args: --upgrade
-    executable: pip3
-    
+
 - name: Install numpy
   ansible.builtin.pip:
     name: numpy
