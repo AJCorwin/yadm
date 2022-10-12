@@ -1,6 +1,10 @@
 #!/bin/bash
 
 set -e
+sudo upt-get pdate
+sudo apt-get upgrade
+sudo apt-get install -y ansible dos2unix whois
+
 
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"
