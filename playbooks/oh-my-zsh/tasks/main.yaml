@@ -1,4 +1,17 @@
 ---
+- name: Install ZSH
+  ansible.builtin.package:
+    name:
+      - zsh
+    state: latest
+  become: yes
+
+- name: Set default
+  user:
+    name: "{{ ansible_env['USER'] }}"
+    shell: /usr/bin/zsh
+  become: yes
+
 - name: Existing install
   stat:
     path: "{{ ansible_user_dir }}/.oh-my-zsh"
