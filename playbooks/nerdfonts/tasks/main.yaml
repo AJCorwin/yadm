@@ -24,5 +24,6 @@
 - name: Change the widget font to "Hack-Regular"
   community.general.gconftool2:
     key: "/desktop/gnome/interface/font_name"
+    state: "absent"
     value_type: "string"
     value: "Hack-regular.tff"    

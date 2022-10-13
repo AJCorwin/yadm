@@ -1,5 +1,5 @@
 default_roles:
-  - doom
-  - python
-  - nerdfonts
-  - oh-my-zsh
+  - {role: doom, tags: ['doom', 'emacs']}
+  - {role: python, tags: ['python']}
+  - {role: nerdfonts, tags: ['nerdfonts', 'nerd-fonts']}
+  - {role: oh-my-zsh, tags: ['zsh', 'ui', 'oh-my-zsh']}
