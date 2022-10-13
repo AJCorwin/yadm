@@ -21,9 +21,22 @@
    state: present
   become: yes
 
+- name: download powerline fonts
+  ansible.builtin.apt:
+   name: fonts-powerline
+   state: present
+  become: yes
+
+- name: download powerline
+  ansible.builtin.apt:
+   name: powerline
+   state: present
+  become: yes
+
 - name: Change the widget font to "Hack-Regular"
   community.general.gconftool2:
     key: "/desktop/gnome/interface/font_name"
     state: "absent"
     value_type: "string"
-    value: "Hack-regular.tff"    
+    value: "Hack-regular.tff"
+  become: yes    

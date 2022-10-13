@@ -3,7 +3,7 @@
 set -e
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install -y ansible powerline whois pip fonts-hack-ttf dos2unix fonts-powerline
+sudo apt-get install -y ansible powerline whois pip fonts-hack-ttf dos2unix fonts-powerline vim
  
 
 CONFIG_DIR="$HOME/playbooks"

@@ -1,28 +1,28 @@
 ---
+- name: Update apt-get repo and cache
+  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
 
-- name: Add apt_repository
-  apt_repository:
-    repo: 'ppa:kelleyk/emacs'
-    state: present
+- name: Upgrade all apt packages
+  apt: upgrade=dist force_apt_get=yes
+
+- name: Install fd-find
+  ansible.builtin.apt:
+   name: fd-find
+   state: present
   become: yes
-#- name: Update apt-get repo and cache
-#  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
-#
-#- name: Upgrade all apt packages
-#  apt: upgrade=dist force_apt_get=yes
-#
-#- name: Install fd-find
-#  ansible.builtin.apt:
-#   name: fd-find
-#   state: present
-#  become: yes
-#
-#- name: Install ripgrep
-#  ansible.builtin.apt:
-#   name: ripgrep
-#   state: present
-#  become: yes
-#
+
+- name: Install ripgrep
+  ansible.builtin.apt:
+   name: ripgrep
+   state: present
+  become: yes
+
+  #- name: Add apt_repository
+  #apt_repository:
+  #repo: 'ppa:kelleyk/emacs'
+  #state: present
+  #become: yes  
+  
 #- name: Installing emacs28
 #  apt:
 #    name: emacs28
