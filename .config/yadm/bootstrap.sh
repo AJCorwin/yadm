@@ -28,6 +28,3 @@ ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/m
 
 cd "$HOME"
 yadm checkout "/home/dev"
-sudo chsh -s $(which zsh)
-zsh
-exec zsh

@@ -21,6 +21,12 @@
    state: present
   become: yes
 
+- name: download gconfservice
+  ansible.builtin.apt:
+   name: gconf-service
+   state: present
+  become: yes
+
 - name: download powerline fonts
   ansible.builtin.apt:
    name: fonts-powerline
