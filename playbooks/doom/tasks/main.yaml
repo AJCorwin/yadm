@@ -6,6 +6,6 @@
 
 - name: Install Emacs28
   ansible.builtin.apt:
-          name: emacs28
+          name: emacs28-nativecomp
           state: present
           become: yes
