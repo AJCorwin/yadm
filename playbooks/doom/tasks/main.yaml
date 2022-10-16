@@ -1,4 +1,7 @@
 ---
+- name: CD HOME
+  ansible.builtin.shell: cd $HOME
+
 - name: Uninstall emacs
   ansible.builtin.shell: sudo apt remove --autoremove emacs emacs-common
   become: yes
@@ -24,8 +27,6 @@
   ansible.builtin.git:
     repo: 'https://github.com/hlissner/doom-emacs'
     dest: ~/.emacs.d
-    clone: yes
-    update: no
     become: yes
 
 - name: Install Doom
