@@ -1,11 +1,22 @@
 ---
+- name: Uninstall emacs
+  ansible.builtin.shell: sudo apt remove --autoremove emacs emacs-common
+  become: yes
+  # args:
+  #  executable: /bin/bash
+
 - name: Add emacs28
   ansible.builtin.apt_repository:
           repo: ppa:kelleyk/emacs
           become: yes
 
+- name: Run apt update
+  ansible.builtin.shell: sudo apt update
+   become: yes
+
+
 - name: Install Emacs28
   ansible.builtin.apt:
-          name: emacs28-nativecomp
+          name: emacs28
           state: present
           become: yes
