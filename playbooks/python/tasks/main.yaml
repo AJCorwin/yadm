@@ -1,55 +1,26 @@
 ---
+- name: Python Packages Playbook
+  become: yes
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: install pip3
+      ansible.builtin.apt:
+       name: pip
+       state: present
 
-- name: Install Pip3
-  ansible.builtin.apt:
-    name: pip
-    state: present
-
-- name: Install numpy
-  ansible.builtin.pip:
-    name: numpy
-    
-- name: Install pandas
-  ansible.builtin.pip:
-    name: pandas
-    
-- name: Install tensorflow
-  ansible.builtin.pip:
-    name: tensorflow
-    
-- name: Install pytorch
-  ansible.builtin.pip:
-    name: torch
-    
-- name: Install lightgbm
-  ansible.builtin.pip:
-    name: lightgbm
-    
-- name: Install gleam
-  ansible.builtin.pip:
-    name: gleam
-    
-- name: Install shogun
-  ansible.builtin.pip:
-    name: shogun
-    
-- name: Install opencv
-  ansible.builtin.pip:
-    name: opencv-contrib-python
-    
-- name: Install scrapy
-  ansible.builtin.pip:
-    name: scrapy
-    
-- name: Install scikit-learn
-  ansible.builtin.pip:
-    name: scikit-learn
-    
-- name: Install matplotlib
-  ansible.builtin.pip:
-    name: matplotlib
-   
-- name: Install nltk
-  ansible.builtin.pip:
-    name: nltk
+    - name: Install numpy
+      ansible.builtin.pip:
+       name: numpy
+       name: pandas
+       name: tensorflow
+       name: torch
+       name: lightgbm
+       name: gleam
+       name: shogun
+       name: opencv-contrib-python
+       name: scrapy
+       name: scikit-learn
+       name: matplotlib
+       name: nltk
     

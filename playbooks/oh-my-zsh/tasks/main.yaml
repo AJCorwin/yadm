@@ -1,4 +1,11 @@
 ---
+- name: oh-my-zsh Playbook
+  become: yes
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: add emacs ppa
+      ansible.builtin.apt_repository:
 - name: Install ZSH
   ansible.builtin.package:
     name:

@@ -1,48 +1,18 @@
 ---
-- name: CD HOME
-  ansible.builtin.shell: cd $HOME
-
-- name: Uninstall emacs
-  ansible.builtin.shell: sudo apt remove --autoremove emacs emacs-common
-   become: yes
-  # args:
-  #  executable: /bin/bash
-
-- name: Add emacs28
-  ansible.builtin.apt_repository:
-          repo: 'ppa:kelleyk/emacs'
-          state: present
-          become: yes
-
-- name: Run apt update
-  ansible.builtin.shell: apt update
-   become: yes
-
-- name: Install Emacs28
-  ansible.builtin.apt:
-          name: emacs28
-          become: yes
-
-- name: Clone emacs
-  ansible.builtin.git:
-    repo: 'https://github.com/hlissner/doom-emacs'
-    dest: ~/.emacs.d
-    become: yes
-
-- name: Install Doom
-  ansible.builtin.shell: ~/.emacs.d/bin/doom install
-   become: yes
-  # args:
-  #  executable: /bin/bash
-
-- name: Run doom sync
-  ansible.builtin.shell: ~/.emacs.d/bin/doom sync
-   become: yes
-  # args:
-  #  executable: /bin/bash
-
-- name: Run doom doctor
-  ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
-   become: yes
-  # args:
-  #  executable: /bin/bash
+- name: Doom playbook
+  become: yes
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Go to home directory
+      ansible.builtin.shell: cd $HOME
+    - name: clone emacs
+      ansible.builtin.git:
+       repo: 'https://github.com/hlissner/doom-emacs'
+       dest: ~/.emacs.d
+    - name: Install Doom Emacs
+      ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+    - name: Run Doom Sync
+      ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
+    - name: Run Doom Doctor
+      ansible.builtin.shell: ~/.emacs.d/bin/doom doctor

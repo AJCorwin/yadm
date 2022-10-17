@@ -1,48 +1,15 @@
 ---
-- name: ensure fonts directory
-  file:
-    path: "{{ lookup('env', 'HOME') }}/.fonts"
-    state: directory
-
-- name: Hack exists
-  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/Hack*Nerd*Font*Complete*"
-  register: hack_exists
-  ignore_errors: yes
-
-- name: Download Hack
-  when: hack_exists is failed
-  ansible.builtin.apt:
-    name: fonts-hack-ttf
-    state: present
-
-- name: download gfon2
-  ansible.builtin.apt:
-   name: gconf2
-   state: present
+- name: Fonts playbook
   become: yes
-
-- name: download gconfservice
-  ansible.builtin.apt:
-   name: gconf-service
-   state: present
-  become: yes
-
-- name: download powerline fonts
-  ansible.builtin.apt:
-   name: fonts-powerline
-   state: present
-  become: yes
-
-- name: download powerline
-  ansible.builtin.apt:
-   name: powerline
-   state: present
-  become: yes
-
-- name: Change the widget font to "Hack-Regular"
-  community.general.gconftool2:
-    key: "/desktop/gnome/interface/font_name"
-    state: "absent"
-    value_type: "string"
-    value: "Hack-regular.tff"
-  become: yes    
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Download Fonts
+       ansible.builtin.apt:
+         pkg:
+         - fonts-hack-ttf
+         - gconf2
+         - gconf-service
+         - fonts-powerline
+         - powerline
+         state: latest
