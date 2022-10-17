@@ -1,5 +1,4 @@
- - src: terminalsoft
- - src: python
- - src: nerdfonts
- - src: oh-my-zsh
- - src: doom
+- src: terminalsoft
+- src: python
+- src: oh-my-zsh
+- src: doom

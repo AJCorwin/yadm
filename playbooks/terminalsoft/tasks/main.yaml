@@ -11,6 +11,8 @@
       ansible.builtin.apt:
         pkg:
         - powerline
+        - gconf2
+        - gconf-service
         - whois
         - emacs28
         - pip
