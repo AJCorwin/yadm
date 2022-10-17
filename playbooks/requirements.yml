@@ -1,4 +1,5 @@
-- src: doom
+# - src: doom
   #- src: python
   #- src: nerdfonts
   #- src: oh-my-zsh
+  - src: initial_software
