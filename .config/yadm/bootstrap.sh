@@ -11,6 +11,7 @@ SSH_DIR="$HOME/.ssh"
 
 
 #### Original Script Below ####
+cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass
 cd $HOME
 yadm checkout "/home/dev"

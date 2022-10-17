@@ -24,4 +24,5 @@
         - tmux
         - wget
         - curl
+        - tree
         state: latest
