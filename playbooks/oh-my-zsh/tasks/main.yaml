@@ -4,29 +4,29 @@
   hosts: localhost
   gather_facts: false
   tasks:
-     - name: Install ZSH
-       ansible.builtin.package:
-        name:
-          - zsh
-        state: latest
+    - name: Install ZSH
+      ansible.builtin.package:
+       name:
+         - zsh
+       state: latest
 
-     - name: Existing install
-       stat:
-        path: "{{ ansible_user_dir }}/.oh-my-zsh"
-       register: install
+    - name: Existing install
+      stat:
+       path: "{{ ansible_user_dir }}/.oh-my-zsh"
+      register: install
 
-     - name: Download oh-my-zsh
-       get_url:
-        dest: /tmp/zsh-install.sh
-        mode: 0755
-        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-       when: not install.stat.exists
+    - name: Download oh-my-zsh
+      get_url:
+       dest: /tmp/zsh-install.sh
+       mode: 0755
+       url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+      when: not install.stat.exists
 
-     - name: Execute zsh-install.sh
-       shell: /tmp/zsh-install.sh
-       when: not install.stat.exists
+    - name: Execute zsh-install.sh
+      shell: /tmp/zsh-install.sh
+      when: not install.stat.exists
 
-     - name: Set default
-       user:
-        name: "{{ ansible_env['USER'] }}"
-        shell: source ~/.zshrc
+    - name: Set default
+      user:
+       name: "{{ ansible_env['USER'] }}"
+       shell: source ~/.zshrc

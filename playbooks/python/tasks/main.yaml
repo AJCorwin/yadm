@@ -2,7 +2,6 @@
 - name: Python Packages Playbook
   become: yes
   hosts: localhost
-  gather_facts: false
   tasks:
     - name: install pip3
       ansible.builtin.apt:
