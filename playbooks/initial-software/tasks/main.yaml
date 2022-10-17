@@ -23,9 +23,3 @@
         - wget
         - curl
         state: latest
-    - name: Install Doom Emacs
-      ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
-    - name: Run Doom Sync
-      ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
-    - name: Run Doom Doctor
-      ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
