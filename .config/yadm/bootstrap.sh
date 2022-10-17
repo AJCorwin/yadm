@@ -2,7 +2,7 @@
 
 # Install Enough to run Ansible
 set -e
-sudo apt update && sudo apt -y install ansible
+sudo apt update && sudo apt -y install ansible-core
 
 
 CONFIG_DIR="$HOME/playbooks"
