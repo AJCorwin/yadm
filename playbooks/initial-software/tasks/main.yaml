@@ -24,7 +24,6 @@
         - curl
         state: latest
     - name: Install Doom Emacs
-      become: true
       ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
     - name: Run Doom Sync
       ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
