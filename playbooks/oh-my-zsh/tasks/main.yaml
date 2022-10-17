@@ -1,7 +1,5 @@
 ---
 - name: oh-my-zsh Playbook
-  become: yes
-  hosts: localhost
   tasks:
     - name: Install ZSH
       ansible.builtin.package:

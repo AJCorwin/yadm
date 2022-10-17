@@ -1,8 +1,5 @@
 ---
 - name: Doom playbook
-  become: yes
-  hosts: localhost
-  gather_facts: false
   tasks:
     - name: Go to home directory
       ansible.builtin.shell: cd $HOME
