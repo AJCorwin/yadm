@@ -25,7 +25,7 @@
         state: latest
     - name: User management
       ansible.builtin.user:
-        name: masterfirewall
+        name: {{ lookup('env', 'USER') }}
         state: present
         shell: /usr/bin/zsh
         groups: sudo
@@ -34,4 +34,4 @@
         ssh_key_file: .ssh/id_rsa
     - name: Setup Doom Emacs
       become: true
-      become_user: masterfirewall
+      become_user: {{ lookup('env', 'USER') }}

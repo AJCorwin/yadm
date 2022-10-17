@@ -4,17 +4,18 @@
 
 - name: Uninstall emacs
   ansible.builtin.shell: sudo apt remove --autoremove emacs emacs-common
-  become: yes
+   become: yes
   # args:
   #  executable: /bin/bash
 
 - name: Add emacs28
   ansible.builtin.apt_repository:
-          repo: ppa:kelleyk/emacs
+          repo: 'ppa:kelleyk/emacs'
+          state: present
           become: yes
 
 - name: Run apt update
-  ansible.builtin.shell: sudo apt update
+  ansible.builtin.shell: apt update
    become: yes
 
 - name: Install Emacs28
@@ -30,18 +31,18 @@
 
 - name: Install Doom
   ansible.builtin.shell: ~/.emacs.d/bin/doom install
-  become: yes
+   become: yes
   # args:
   #  executable: /bin/bash
 
 - name: Run doom sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
-  become: yes
+   become: yes
   # args:
   #  executable: /bin/bash
 
 - name: Run doom doctor
   ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
-  become: yes
+   become: yes
   # args:
   #  executable: /bin/bash
