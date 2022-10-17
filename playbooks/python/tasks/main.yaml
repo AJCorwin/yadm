@@ -5,22 +5,21 @@
   tasks:
     - name: install pip3
       ansible.builtin.apt:
-       name: pip
-       state: present
+        name: pip
+        state: present
 
     - name: Install numpy
       ansible.builtin.pip:
-       name: 
-         - numpy
-         - pandas
-         - tensorflow
-         - torch
-         - lightgbm
-         - gleam
-         - shogun
-         - opencv-contrib-python
-         - scrapy
-         - scikit-learn
-         - matplotlib
-         - nltk
-    
+        name:
+          - numpy
+          - pandas
+          - tensorflow
+          - torch
+          - lightgbm
+          - gleam
+          - shogun
+          - opencv-contrib-python
+          - scrapy
+          - scikit-learn
+          - matplotlib
+          - nltk
