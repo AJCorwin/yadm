@@ -1,5 +1,5 @@
 ---
-- name: Initial-Software Playbook
+- name: Terminal Software Playbook
   become: yes
   hosts: localhost
   gather_facts: false

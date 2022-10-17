@@ -1,5 +1,5 @@
 default_roles:
- - initial-software    
+ - terminalsoft
  - doom
  - python
  - nerdfonts
