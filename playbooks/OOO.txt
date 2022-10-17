@@ -1,0 +1,10 @@
+1. pull down the setup.bash script
+   a. this should install ansible core
+   b. this should also pull down the newcomputer.yaml playbook
+2. run the newcomputer.yaml playbook
+   a. this should install PPAs and Software as desired
+   b. this should add any users/groups and add users to groups as desired.
+   c. this should $AsUser do user specific stuff.
+      1. git clone a bunch of stuff.
+      2. run doom install
+      3. yadm clone $yadm-repo

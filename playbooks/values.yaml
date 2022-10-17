@@ -1,6 +1,6 @@
 default_roles:
+ - initial_software    
     # - doom
     #  - python
     #  - nerdfonts
     #  - oh-my-zsh
- - initial_software
