@@ -1,6 +1,6 @@
 default_roles:
   - terminalsoft
-  - doom
   - python
   - nerdfonts
   - oh-my-zsh
+  - doom
