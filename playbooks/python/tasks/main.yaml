@@ -10,16 +10,17 @@
 
     - name: Install numpy
       ansible.builtin.pip:
-       name: numpy
-       name: pandas
-       name: tensorflow
-       name: torch
-       name: lightgbm
-       name: gleam
-       name: shogun
-       name: opencv-contrib-python
-       name: scrapy
-       name: scikit-learn
-       name: matplotlib
-       name: nltk
+       name: 
+         - numpy
+         - pandas
+         - tensorflow
+         - torch
+         - lightgbm
+         - gleam
+         - shogun
+         - opencv-contrib-python
+         - scrapy
+         - scikit-learn
+         - matplotlib
+         - nltk
     
