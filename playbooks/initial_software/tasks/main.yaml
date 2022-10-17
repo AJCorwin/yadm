@@ -1,0 +1,37 @@
+---
+- name: First Playbook
+  become: yes
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: add emacs ppa
+      ansible.builtin.apt_repository:
+        repo: deb https://ppa.launchpadcontent.net/kelleyk/emacs/ubuntu/ jammy main
+    - name: install default software
+      ansible.builtin.apt:
+        pkg:
+        - powerline
+        - whois
+        - emacs28
+        - pip
+        - fonts-hack-ttf
+        - dos2unix
+        - fonts-powerline
+        - vim
+        - zsh
+        - tmux
+        - wget
+        - curl
+        state: latest
+    - name: User management
+      ansible.builtin.user:
+        name: masterfirewall
+        state: present
+        shell: /usr/bin/zsh
+        groups: sudo
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+    - name: Setup Doom Emacs
+      become: true
+      become_user: masterfirewall
