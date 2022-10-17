@@ -3,4 +3,4 @@ default_roles:
     #  - python
     #  - nerdfonts
     #  - oh-my-zsh
-    - initial_software
+ - initial_software

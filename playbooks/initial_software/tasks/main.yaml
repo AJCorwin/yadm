@@ -23,15 +23,10 @@
         - wget
         - curl
         state: latest
-    - name: User management
-      ansible.builtin.user:
-        name: {{ lookup('env', 'USER') }}
-        state: present
-        shell: /usr/bin/zsh
-        groups: sudo
-        generate_ssh_key: yes
-        ssh_key_bits: 2048
-        ssh_key_file: .ssh/id_rsa
-    - name: Setup Doom Emacs
+    - name: Install Doom Emacs
       become: true
-      become_user: {{ lookup('env', 'USER') }}
+      ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+    - name: Run Doom Sync
+      ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
+    - name: Run Doom Doctor
+      ansible.builtin.shell: ~/.emacs.d/bin/doom doctor

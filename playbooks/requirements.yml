@@ -2,4 +2,4 @@
   #- src: python
   #- src: nerdfonts
   #- src: oh-my-zsh
-  - src: initial_software
+- src: initial_software
