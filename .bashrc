@@ -4,3 +4,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 if [ -f "$XDG_CONFIG_HOME/bash/bashrc" ]; then
 	source "$XDG_CONFIG_HOME/bash/bashrc"
 fi
+
+export PATH"$HOME/.emacs.d/bin:$PATH"
+

@@ -33,7 +33,7 @@
 
 - name: Install Doom Emacs
   expect:
-    command: bash -c "~/.emacs.d/bin/doom install"
+    command: doom install
     responses:
       "generate an envvar file?": 'y'
       "install all-the-icon's fonts?": 'y'
