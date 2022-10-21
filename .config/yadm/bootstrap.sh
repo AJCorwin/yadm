@@ -16,5 +16,5 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/dev"
-zsh
+sudo -y chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
