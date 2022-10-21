@@ -2,21 +2,4 @@
 - name: add emacs ppa
   ansible.builtin.apt_repository:
     repo: deb https://ppa.launchpadcontent.net/kelleyk/emacs/ubuntu/ jammy main
-- name: install default software
-  ansible.builtin.apt:
-    pkg:
-      - powerline
-      - gconf-service
-      - whois
-      - emacs28
-      - pip
-      - fonts-hack-ttf
-      - dos2unix
-      - fonts-powerline
-      - vim
-      - zsh
-      - tmux
-      - wget
-      - curl
-      - cargo
-    state: latest
+    become: yes
