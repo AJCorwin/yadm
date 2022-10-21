@@ -20,27 +20,3 @@
       - exa
   become: true
 
-- name: install pexpect via pip
-  ansible.builtin.shell: pip install pexpect
-
-- name: Go to home directory
-  ansible.builtin.shell: cd $HOME
-
-- name: clone DOOM emacs
-  ansible.builtin.git:
-    repo: 'https://github.com/hlissner/doom-emacs'
-    dest: ~/.emacs.d
-
-- name: Install Doom Emacs
-  expect:
-    command: bash -c "~/.emacs.d/bin/doom install"
-    timeout: 600
-    responses:
-       "Generate an envvar file?": "y"
-       "Download and install": "y"
-
-- name: Run Doom Sync
-  ansible.builtin.shell: ~/.emacs.d/bin/doom sync
-
-- name: Run Doom Doctor
-  ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
