@@ -1,6 +1,6 @@
 ---
 - name: Install default terminal software
-ansible.builtin.apt:
+  ansible.builtin.apt:
     pkg:
       - powerline
       - gconf-service
