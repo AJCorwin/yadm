@@ -20,6 +20,7 @@ git clone https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 ./install.sh
  cd $HOME
+
 sudo rm nerd-fonts/ -r
 source .zshrc
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"  -y
