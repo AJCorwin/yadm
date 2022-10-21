@@ -13,8 +13,8 @@ SSH_DIR="$HOME/.ssh"
 
 #### Original Script Below ####
 cd "$HOME/playbooks"
-ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vvv
+ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/dev"
 sudo apt-get update && sudo apt-get upgrade
-source ~/.zshrc
+zsh

@@ -1,18 +1,13 @@
 ---
-- name: Doom playbook
-  become: yes
-  hosts: localhost
-  gather_facts: false
-  tasks:
-    - name: Go to home directory
-      ansible.builtin.shell: cd $HOME
-    - name: clone emacs
-      ansible.builtin.git:
-       repo: 'https://github.com/hlissner/doom-emacs'
-       dest: ~/.emacs.d
-    - name: Install Doom Emacs
-      ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
-    - name: Run Doom Sync
-      ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
-    - name: Run Doom Doctor
-      ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
+- name: Go to home directory
+  ansible.builtin.shell: cd $HOME
+- name: clone emacs
+  ansible.builtin.git:
+   repo: 'https://github.com/hlissner/doom-emacs'
+   dest: ~/.emacs.d
+- name: Install Doom Emacs
+  ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+- name: Run Doom Sync
+  ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
+- name: Run Doom Doctor
+  ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
