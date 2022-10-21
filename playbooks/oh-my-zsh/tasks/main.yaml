@@ -1,19 +1,9 @@
 ---
-- name: Existing install
+- name: Checking for existing install
   stat:
     path: "$HOME/.oh-my-zsh"
   register: install
   become: true
 
-- name: Download oh-my-zsh
-  get_url:
-    dest: /tmp/zsh-install.sh
-    mode: 0755
-    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-  when: not install.stat.exists
-  become: true
-
-- name: Execute zsh-install.sh
-  shell: /tmp/zsh-install.sh "" --unattended --yes
-  when: not install.stat.exists
-  become: true
+- name: Install Oh-My-ZSH
+  shell: "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
