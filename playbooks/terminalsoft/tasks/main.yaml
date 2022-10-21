@@ -16,4 +16,4 @@
       - wget
       - curl
       - cargo
-    become: true
+  become: true

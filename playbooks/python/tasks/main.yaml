@@ -1,8 +1,4 @@
 ---
-- name: install pip3
-  ansible.builtin.apt:
-    name: python-pip3
-
 - name: Install python packages
   ansible.builtin.pip:
     name:

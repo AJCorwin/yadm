@@ -14,6 +14,6 @@
   become: true
 
 - name: Execute zsh-install.sh
-  shell: /tmp/zsh-install.sh
+  shell: /tmp/zsh-install.sh --yes
   when: not install.stat.exists
   become: true
