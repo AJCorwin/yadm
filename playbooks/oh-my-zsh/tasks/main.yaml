@@ -11,7 +11,7 @@
 
     - name: Existing install
       stat:
-        path: "{{ ansible_user_dir }}/.oh-my-zsh"
+        path: "$HOME/.oh-my-zsh"
       register: install
 
     - name: Download oh-my-zsh
@@ -26,6 +26,4 @@
       when: not install.stat.exists
 
     - name: Set default
-      user:
-        name: "{{ ansible_env['USER'] }}"
-        shell: source ~/.zshrc
+      shell: source ~/.zshrc

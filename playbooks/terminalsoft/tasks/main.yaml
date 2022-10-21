@@ -1,7 +1,6 @@
 ---
 - name: Terminal Software Playbook
   become: yes
-  hosts: localhost
   tasks:
     - name: add emacs ppa
       ansible.builtin.apt_repository:
