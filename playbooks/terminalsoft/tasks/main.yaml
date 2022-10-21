@@ -34,7 +34,7 @@
 - name: Install Doom Emacs
   expect:
     command: bash -c "~/.emacs.d/bin/doom install"
-    timeout: 300
+    timeout: 600
     responses:
        "Generate an envvar file?": "y"
        "Download and install": "y"
