@@ -29,12 +29,13 @@
    dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  ansible.builtin.shell: ~/.emacs.d/bin/doom install
-  expect:
-    command: vsx update-software
-    responses:
-      'First Question in the prompt' : 'y'
-      'Second Question in the prompt' : 'y'
+  ansible.builtin.expect:
+  command:  ~/.emacs.d/bin/doom install
+  responses:
+    'First Question in the prompt': 'y'
+    'Second Question in the prompt': 'y'
+
+
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
