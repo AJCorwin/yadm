@@ -39,7 +39,7 @@
        - Skipping init.el (already exists)
        - Skipping config.el (already exists)
        - Skipping packages.el (already exists)
-       Generate an envvar file? (see `doom help env` for details) (y or n)": "y"
+       Generate an envvar file? (see \`doom help env\` for details) (y or n)": "y"
       "Download and install all-the-icon's fonts? (y or n)": 'y'
 
 - name: Run Doom Sync
