@@ -35,9 +35,8 @@
   expect:
     command: bash -c "~/.emacs.d/bin/doom install"
     responses:
-      'Generate an envvar file?': 'y'
-      "Install all-the-icon's fonts?": 'y'
-    echo "yes"
+      "generate an envvar file?": 'y'
+      "install all-the-icon's fonts?": 'y'
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
