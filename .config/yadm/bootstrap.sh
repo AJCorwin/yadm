@@ -3,7 +3,7 @@
 # Install Enough to run Ansible
 set -e
 sudo apt update && sudo apt -y install ansible-core
-sudo add-apt-repository ppa:kelleyk/emacs --yes
+sudo add-apt-repository --yes ppa:kelleyk/emacs
 
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"
