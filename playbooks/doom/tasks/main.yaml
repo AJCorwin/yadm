@@ -8,10 +8,11 @@
    dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+  ansible.builtin.shell: ~/.emacs.d/bin/doom install "" -y
+  become: true
 
 - name: Run Doom Sync
-  ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
+  ansible.builtin.shell: ~/.emacs.d/bin/doom sync
 
 - name: Run Doom Doctor
   ansible.builtin.shell: ~/.emacs.d/bin/doom doctor

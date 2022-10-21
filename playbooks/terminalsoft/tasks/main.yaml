@@ -16,21 +16,23 @@
       - wget
       - curl
       - cargo
+      - bat
+      - exa
   become: true
 
 - name: Go to home directory
   ansible.builtin.shell: cd $HOME
 
-- name: clone emacs
+- name: clone DOOM emacs
   ansible.builtin.git:
    repo: 'https://github.com/hlissner/doom-emacs'
    dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+  ansible.builtin.shell: ~/.emacs.d/bin/doom install "" -y
 
 - name: Run Doom Sync
-  ansible.builtin.shell: ~/.emacs.d/bin/doom sync -y
+  ansible.builtin.shell: ~/.emacs.d/bin/doom sync "" -y
 
 - name: Run Doom Doctor
   ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
