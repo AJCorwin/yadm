@@ -18,3 +18,5 @@ cd $HOME
 yadm checkout "/home/dev"
 sudo -y chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
+
+printf "/n/nChange your terminal font to hack/nPlease reboot your machine for terminal changes to take affect/n"
