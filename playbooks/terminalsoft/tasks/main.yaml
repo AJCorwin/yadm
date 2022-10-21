@@ -25,17 +25,15 @@
 
 - name: clone DOOM emacs
   ansible.builtin.git:
-   repo: 'https://github.com/hlissner/doom-emacs'
-   dest: ~/.emacs.d
+    repo: 'https://github.com/hlissner/doom-emacs'
+    dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  ansible.builtin.expect:
-  command:  ~/.emacs.d/bin/doom install
-  responses:
-    'First Question in the prompt': 'y'
-    'Second Question in the prompt': 'y'
-
-
+  expect:
+    command:  ~/.emacs.d/bin/doom install
+    responses:
+      'Generate an envvar file? (see `doom help env` for details) (y or n)': 'y'
+      "Download and install all-the-icon's fonts? (y or n)": 'y'
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
