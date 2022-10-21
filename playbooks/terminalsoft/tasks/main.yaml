@@ -32,11 +32,11 @@
     dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  expect:
-    command: /bin/bash '~/.emacs.d/bin/doom install'
-    responses:
-      'Generate an envvar file? \(see `doom help env` for details\) \(y or n\)': 'y'
-      "Download and install all-the-icon's fonts? (y or n)": 'y'
+  shell: ~/.emacs.d/bin/doom install 
+    expect:
+      responses:
+        'Generate an envvar file? \(see `doom help env` for details\) \(y or n\)': 'y'
+        "Download and install all-the-icon's fonts? (y or n)": 'y'
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
