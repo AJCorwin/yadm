@@ -29,7 +29,7 @@
    dest: ~/.emacs.d
 
 - name: Install Doom Emacs
-  ansible.builtin.shell: ~/.emacs.d/bin/doom install -y
+  ansible.builtin.shell: ~/.emacs.d/bin/doom install
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync

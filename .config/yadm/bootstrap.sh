@@ -2,7 +2,8 @@
 
 # Install Enough to run Ansible
 set -e
-sudo apt update && sudo apt -y install ansible-core yadm
+sudo apt -y update
+sudo apt -y install ansible-core yadm
 yadm clone https://github.com/AJCorwin/yadm.git
 sudo add-apt-repository --yes ppa:kelleyk/emacs
 
