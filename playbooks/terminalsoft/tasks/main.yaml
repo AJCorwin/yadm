@@ -33,10 +33,11 @@
 
 - name: Install Doom Emacs
   expect:
-    command: bash -c "y ~/.emacs.d/bin/doom install"
+    command: bash -c "~/.emacs.d/bin/doom install"
+    timeout: 300
     responses:
-      "generate an envvar file?": 'y'
-      "install all-the-icon's fonts?": 'y'
+       "Generate an envvar file?": "y\n"
+       "Download and install": "y\n"
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
