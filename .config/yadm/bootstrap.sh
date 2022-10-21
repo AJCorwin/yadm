@@ -16,7 +16,8 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/dev"
-sudo -y chsh -s $(which zsh)
+sudo chsh -s $(which zsh
+zsh)
 sudo apt update -y  && sudo apt upgrade -y
 
 printf "/n/nChange your terminal font to hack/nPlease reboot your machine for terminal changes to take affect/n"
