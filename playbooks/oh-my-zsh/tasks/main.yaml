@@ -1,16 +1,9 @@
 ---
-- name: Install ZSH
-  ansible.builtin.package:
-    name:
-      - zsh
-    state: latest
-    become: yes
-
 - name: Existing install
   stat:
     path: "$HOME/.oh-my-zsh"
   register: install
-  become: yes
+  become: true
 
 - name: Download oh-my-zsh
   get_url:
@@ -18,13 +11,9 @@
     mode: 0755
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
   when: not install.stat.exists
-  become: yes
+  become: true
 
 - name: Execute zsh-install.sh
   shell: /tmp/zsh-install.sh
   when: not install.stat.exists
-  become: yes
-
-- name: Set default
-  shell: source ~/.zshrc
-  become: yes
+  become: true
