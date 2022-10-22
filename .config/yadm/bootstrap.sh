@@ -8,6 +8,7 @@ sudo apt -y update
 sudo apt install ansible-core
 sudo apt -y install yadm
 mkdir Github-Repos
+mkdir Code
 yadm clone https://github.com/AJCorwin/yadm.git -b main
 sudo add-apt-repository --yes ppa:kelleyk/emacs
 
