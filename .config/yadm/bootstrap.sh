@@ -21,4 +21,4 @@ chsh -s $(which zsh)
 zsh
 sudo apt update -y  && sudo apt upgrade -y
 
-printf "/n/nChange your terminal font to hack/nPlease reboot your machine for terminal changes to take affect/n"
+echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
