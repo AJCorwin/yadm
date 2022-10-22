@@ -19,4 +19,6 @@
       - bat
       - fd-find
       - ripgrep
+      - cmake
+      - libtool
   become: true
