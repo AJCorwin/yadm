@@ -17,6 +17,8 @@
       - curl
       - cargo
       - bat
-      - exa
   become: true
 
+    # - name: Cargo install exa
+    #  ansible.builtin.shell: cargo install exa
+    #  become: true
