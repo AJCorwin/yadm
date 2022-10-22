@@ -92,7 +92,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 093 232 default "%(!.%{%F{yellow}%}.)%m"
+    prompt_segment 093 232 $USER "%(!.%{%F{yellow}%}.)%m"
   fi
 }
 
