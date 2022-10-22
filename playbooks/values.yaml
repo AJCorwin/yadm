@@ -1,5 +1,5 @@
 default_roles:
   - terminalsoft
   - python
-  - oh-my-zsh
   - doom
+  - oh-my-zsh
