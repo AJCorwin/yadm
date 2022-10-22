@@ -5,7 +5,7 @@ set -e
 sudo apt -y update
 sudo apt install ansible
 sudo apt -y install yadm
-yadm clone https://github.com/AJCorwin/yadm.git
+yadm clone https://github.com/AJCorwin/yadm.git -b main
 sudo add-apt-repository --yes ppa:kelleyk/emacs
 
 CONFIG_DIR="$HOME/playbooks"
