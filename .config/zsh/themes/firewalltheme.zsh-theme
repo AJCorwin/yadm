@@ -92,7 +92,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment magenta default "%(!.%{%F{yellow}%}.)%m"
+    prompt_segment 093 232 default "%(!.%{%F{yellow}%}.)%m"
   fi
 }
 
@@ -117,7 +117,7 @@ prompt_git() {
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
-      prompt_segment green $CURRENT_FG
+      prompt_segment 022 $CURRENT_FG
     fi
 
     if [[ -e "${repo_path}/BISECT_LOG" ]]; then
@@ -208,18 +208,18 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment green $CURRENT_FG '%d'
+  prompt_segment 028 $CURRENT_FG '%d'
 }
 
 # test
 prompt_time() {
-  prompt_segment blue $CURRENT_FG "%{%F{white}%} %T"
+  prompt_segment 033 $CURRENT_FG "%{%F{white}%} %T"
 
 }
 
 
 prompt_ending() {
-  prompt_segment yellow $CURRENT_FG "👾"
+  prompt_segment black $CURRENT_FG "👾"
 
 }
 
