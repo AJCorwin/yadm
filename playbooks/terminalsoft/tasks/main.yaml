@@ -17,4 +17,5 @@
       - curl
       - cargo
       - bat
+      - fd-find
   become: true
