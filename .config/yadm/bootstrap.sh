@@ -8,7 +8,7 @@ if grep -qi microsoft /proc/version; then
 else
   sudo apt install ansible-core
 fi
-sudo apt -y install ansible-core yadm
+sudo apt -y install yadm
 yadm clone https://github.com/AJCorwin/yadm.git
 sudo add-apt-repository --yes ppa:kelleyk/emacs
 
