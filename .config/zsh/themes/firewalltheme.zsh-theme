@@ -94,7 +94,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment 093 232 $USER "%(!.%{%F{yellow}%}.)%m"
+    prompt_segment 093 232 "🌋 "$USER "%(!.%{%F{yellow}%}.)%m"
   fi
 }
 
@@ -212,22 +212,22 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment 028 $CURRENT_FG "📁➡%d"
+  prompt_segment 028 $CURRENT_FG "📁➡ %d"
 }
 
-# test
+# time section
 prompt_time() {
   H=$(date +%H)
   if (( 8 <= 10#$H && 10#$H < 20 )); then
-     prompt_segment 033 $CURRENT_FG "%{%F{190}%}🌄%T"
+     prompt_segment 033 $CURRENT_FG "%{%F{190}%}🌄 %T"
   else (( 20 <= 10#$H && 10#$H < 8 ));
-     prompt_segment 020 $CURRENT_FG  %{%F{0129}%}"🌌%T"
+     prompt_segment 020 $CURRENT_FG  "%{%F{0129}%}🌌 %T"
   fi
 #  prompt_segment 033 $CURRENT_FG "%{%F{white}%}⏰ %T"
 
 }
 
-
+# end section
 prompt_ending() {
   prompt_segment black $CURRENT_FG "👾"
 
