@@ -217,7 +217,13 @@ prompt_dir() {
 
 # test
 prompt_time() {
-  prompt_segment 033 $CURRENT_FG "%{%F{white}%} ⏰ %T"
+  H=$(date +%H)
+  if (( 8 <= 10#$H && 10#$H < 20 )); then
+     prompt_segment 033 $CURRENT_FG "%{%F{190}%}🌄%T"
+  else (( 20 <= 10#$H && 10#$H < 8 ));
+     prompt_segment 020 $CURRENT_FG  %{%F{0129}%}"🌌%T"
+  fi
+#  prompt_segment 033 $CURRENT_FG "%{%F{white}%}⏰ %T"
 
 }
 
