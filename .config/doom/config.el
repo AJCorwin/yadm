@@ -76,3 +76,4 @@
 ;; they are implemented.
 
 (setq fancy-splash-image (concat doom-user-dir "splashes/JesterHead2.png"))
+
