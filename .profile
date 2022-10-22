@@ -38,5 +38,6 @@ if [ -f "$HOME/.cargo/bin/bat" ] ; then
     alias cat="bat"
 fi
 
-
+alias zconf="vim ~/.zshrc"
+alias proconf="vim ~/.profile"
 export DOOMDIR="$HOME/.config/doom"
