@@ -1,4 +1,8 @@
 ---
+- name: install pexpect
+  ansible.builtin.shell: pip install pexpect
+  become: true
+
 - name: Go to home directory
   ansible.builtin.shell: cd $HOME
 
@@ -20,3 +24,6 @@
 
 - name: Run Doom Doctor
   ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
+    # - name: Cargo install exa
+    #  ansible.builtin.shell: cargo install exa
+    #  become: true
