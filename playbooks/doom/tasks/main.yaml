@@ -1,7 +1,4 @@
 ---
-- name: install pexpect via pip
-  ansible.builtin.shell: pip install pexpect
-
 - name: Go to home directory
   ansible.builtin.shell: cd $HOME
 

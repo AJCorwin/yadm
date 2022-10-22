@@ -1,4 +1,4 @@
 - src: terminalsoft
-- src: doom
 - src: python
+- src: doom
 - src: oh-my-zsh
