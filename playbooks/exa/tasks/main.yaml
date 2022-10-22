@@ -1,0 +1,62 @@
+---
+
+- name: Make sure packages are installed
+  apt:
+    name: 
+      - libgit2-27
+      - cmake
+    state: present 
+  tags: 
+    - wsl
+    - exa
+
+- name: Create directory for Rust
+  file:
+    path: "{{ RUST_DIR }}"
+    state: directory
+  tags: 
+    - wsl
+    - exa
+
+- name: Download rust installation script
+  get_url:
+    url: https://sh.rustup.rs
+    dest: "{{ RUST_DIR }}"
+    mode: a+x
+  tags:
+    - wsl
+    - exa
+
+
+- name:  Install Rust
+  become: yes
+  # Unatendet installation: https://github.com/rust-lang/rustup/issues/297
+  command: "./rustup-init.sh -y"
+  args:
+    chdir: "{{ RUST_DIR }}"
+  tags:
+    - wsl
+    - exa
+
+# To download the latest version, run: git clone https://github.com/­ogham/exa.git 
+- name: Clone exa repository
+  git:
+    
+    repo: https://github.com/ogham/exa.git
+    dest: "{{ EXA_DIR }}"
+  tags:
+    - wsl
+    - exa
+
+# To configure your current shell run source $HOME/.cargo/env
+# which says PATH: "$HOME/.cargo/bin:$PATH"
+- name: Run 'install' target
+  become: yes
+  make:
+    chdir: "{{ EXA_DIR }}"
+    target: install
+  environment:
+    PATH: "{{ lookup('env','HOME') }}/.cargo/bin:{{ ansible_env.PATH }}"
+  tags:
+    - wsl
+    - exa
