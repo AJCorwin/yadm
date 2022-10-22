@@ -1,5 +1,5 @@
 default_roles:
   - terminalsoft
   - python
-  - doom
+  - BFG-Division
   - oh-my-zsh
