@@ -15,8 +15,8 @@
     command: bash -c "~/.emacs.d/bin/doom install"
     timeout: 600
     responses:
-       "Generate an envvar file?": "y"
-       "Download and install": "y"
+      "Generate an envvar file?": "y"
+      "Download and install": "y"
 
 - name: Run Doom Sync
   ansible.builtin.shell: ~/.emacs.d/bin/doom sync
