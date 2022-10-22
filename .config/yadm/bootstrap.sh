@@ -3,6 +3,11 @@
 # Install Enough to run Ansible
 set -e
 sudo apt -y update
+if grep -qi microsoft /proc/version; then
+  sudo apt install ansible
+else
+  sudo apt install ansible-core
+fi
 sudo apt -y install ansible-core yadm
 yadm clone https://github.com/AJCorwin/yadm.git
 sudo add-apt-repository --yes ppa:kelleyk/emacs
