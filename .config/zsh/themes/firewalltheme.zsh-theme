@@ -89,6 +89,8 @@ prompt_end() {
 
 # black, red, green, yellow, blue, magenta, cyan, white
 
+# First promot, username
+
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -140,7 +142,7 @@ prompt_git() {
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
     echo -n "${${ref:gs/%/%%}/refs\/heads\//$PL_BRANCH_CHAR }${vcs_info_msg_0_%% }${mode}"
-  fi
+   fi
 }
 
 prompt_bzr() {
@@ -206,14 +208,16 @@ prompt_hg() {
   fi
 }
 
+# Current working directory portion
+
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment 028 $CURRENT_FG '%d'
+  prompt_segment 028 $CURRENT_FG "📁➡%d"
 }
 
 # test
 prompt_time() {
-  prompt_segment 033 $CURRENT_FG "%{%F{white}%} %T"
+  prompt_segment 033 $CURRENT_FG "%{%F{white}%} ⏰ %T"
 
 }
 
