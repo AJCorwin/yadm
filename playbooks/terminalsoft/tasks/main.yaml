@@ -18,4 +18,5 @@
       - cargo
       - bat
       - fd-find
+      - ripgrep
   become: true
