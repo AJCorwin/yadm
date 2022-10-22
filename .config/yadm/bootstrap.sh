@@ -5,7 +5,7 @@ set -e
 sudo apt -y update
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt -y update
-sudo apt install ansible-core
+sudo apt install ansible-core=2.12
 sudo apt -y install yadm
 yadm clone https://github.com/AJCorwin/yadm.git -b main
 sudo add-apt-repository --yes ppa:kelleyk/emacs
