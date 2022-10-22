@@ -48,5 +48,7 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+;;(add-to-list 'package-archives' '("melpa" . "https://melpa.org/packages/"))
 (package! tldr)
 (package! treemacs-evil)
+(package! jupyter)

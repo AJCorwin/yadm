@@ -32,7 +32,12 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-shades-of-purple)
+
+;; Other themes
+;; (setq doom-theme 'doom-one)
+;; (setq doom-theme 'doom-tokyo-night)
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -74,6 +79,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(setq fancy-splash-image (concat doom-user-dir "splashes/JesterHead2.png"))
-
+(load-theme 'doom-shades-of-purple)
+(setq fancy-splash-image (concat doom-user-dir "splashes/ZeroToProdInRust.png"))

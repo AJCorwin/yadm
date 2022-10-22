@@ -5,3 +5,4 @@ if [ -f "$XDG_CONFIG_HOME/bash/bashrc" ]; then
 	source "$XDG_CONFIG_HOME/bash/bashrc"
 fi
 
+. "$HOME/.cargo/env"
