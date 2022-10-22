@@ -75,4 +75,4 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq fancy-splash-image "$HOME/.config/doom/splashes/ZeroToProdInRust.png")
+(setq fancy-splash-image (concat doom-user-dir "splashes/JesterHead2.png"))
