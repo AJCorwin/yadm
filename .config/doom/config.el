@@ -56,6 +56,10 @@
 ;;
 ;; The exceptions to this rule:
 ;;
+  (setq doom-font (font-spec :family "Hack"
+                             :size 12
+                             :weight 'medium))
+;;
 ;;   - Setting file/directory variables (like `org-directory')
 ;;   - Setting variables which explicitly tell you to set them before their
 ;;     package is loaded (see 'C-h v VARIABLE' to look up their documentation).
