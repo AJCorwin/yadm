@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Doom
+Exec=tmux new -d '$HOME/.emacs.d/bin/doom run'
+Comment=Runs Doom Emacs
+Terminal=false
+Icon=$HOME/.config/doom/DoomHead.png
+Type=Application
