@@ -18,8 +18,8 @@ if [ -d "$HOME/.emacs.d/bin" ] ; then
     export PATH="$HOME/.emacs.d/bin:$PATH"
 fi
 
-if [ -d "$HOME/.doom.d/" ] ; then
-    export DOOMDIR="$HOME/.config/.doom.d"
+if [ -d "$HOME/doom/" ] ; then
+    export DOOMDIR="$HOME/.config/doom/"
 fi
 
 if [ -f "$HOME/.cargo/bin/exa" ] ; then
@@ -39,6 +39,7 @@ if [ -f "$HOME/.cargo/bin/bat" ] ; then
 fi
 
 alias notebook="~/.local/bin/jupyter-notebook --no-browser"
+alias DOOM="tmux new -d '$HOME/.emacs.d/bin/doom run'"
 
 alias gcode="cd $HOME/Code"
 alias ghr="cd $HOME/Github-Repos"
