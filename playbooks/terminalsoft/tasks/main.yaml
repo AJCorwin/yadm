@@ -21,4 +21,6 @@
       - ripgrep
       - cmake
       - libtool
+      - libvterm-dev
+      - htop
   become: true

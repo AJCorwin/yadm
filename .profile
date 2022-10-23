@@ -45,3 +45,11 @@ alias zconf="vim ~/.zshrc"
 alias proconf="vim ~/.profile"
 export DOOMDIR="$HOME/.config/doom"
 . "$HOME/.cargo/env"
+
+
+# must be last
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+}
+setopt PROMPT_SUBST
+PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
