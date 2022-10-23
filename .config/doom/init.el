@@ -199,3 +199,4 @@
        (package-initialize)
        '(explicit-shell-file-name "/bin/zsh")
        '(explicit-zsh-args '("--interactive" "--login"))
+       (add-hook! 'window-setup-hook #'treemacs "$HOME" 'append)

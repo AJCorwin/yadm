@@ -53,5 +53,7 @@
 ;; melpa.org for packages
 (package! tldr)
 (package! treemacs-evil)
-(package! jupyter)
+;;(package! jupyter)
 (package! treemacs-evil)
+;;(package! ein)
+(package! ob-ipython)

@@ -2,6 +2,7 @@
 
 # Install Enough to run Ansible
 set -e
+cd $HOME
 sudo apt -y update
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt -y update
@@ -22,7 +23,7 @@ ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/m
 cd $HOME
 yadm checkout "/home/$USER"
 chsh -s $(which zsh)
-zsh
 sudo apt update -y  && sudo apt upgrade -y
 
 echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
+zsh

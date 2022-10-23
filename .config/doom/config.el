@@ -83,5 +83,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(load-theme 'doom-shades-of-purple)
+(load-theme 'doom-shades-of-purple t)
 (setq fancy-splash-image (concat doom-user-dir "splashes/ZeroToProdInRust.png"))

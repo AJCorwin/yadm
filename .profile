@@ -38,6 +38,8 @@ if [ -f "$HOME/.cargo/bin/bat" ] ; then
     alias cat="bat"
 fi
 
+alias notebook="~/.local/bin/jupyter-notebook --no-browser"
+
 alias gcode="cd $HOME/Code"
 alias ghr="cd $HOME/Github-Repos"
 alias tree="exa --tree"
@@ -45,5 +47,3 @@ alias zconf="vim ~/.zshrc"
 alias proconf="vim ~/.profile"
 export DOOMDIR="$HOME/.config/doom"
 . "$HOME/.cargo/env"
-
-
