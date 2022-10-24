@@ -23,4 +23,9 @@
       - libtool
       - libvterm-dev
       - htop
+      - g++
+      - make
+      - npm
+      - nodejs
+      - neovim
   become: true
