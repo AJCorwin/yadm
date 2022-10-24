@@ -22,12 +22,6 @@ if [ -d "$HOME/doom/" ] ; then
     export DOOMDIR="$HOME/.config/doom/"
 fi
 
-if [ -f "$HOME/$USER/.cargo/bin/exa" ] ; then
-    alias ls="exa"
-    alias ll="exa -alh"
-    alias tree="exa --tree"
-fi
-
 if [ -f "/usr/bin/exa" ] ; then
     alias ls="exa"
     alias ll="exa -alh"

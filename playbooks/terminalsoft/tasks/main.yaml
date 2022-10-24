@@ -28,4 +28,5 @@
       - npm
       - nodejs
       - neovim
+      - exa
   become: true

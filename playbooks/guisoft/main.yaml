@@ -1,0 +1,5 @@
+if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
+    echo "This is WSL"
+else
+    echo "This is not WSL"
+fi
