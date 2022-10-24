@@ -2,10 +2,6 @@ if [ -f "/usr/bin/nvim" ] ; then
    alias vim="/usr/bin/nvim"
 fi
 
-if [ -f "$HOME/.local/bin/lvim" ] ; then
-  alias vim="$HOME/.local/bin/lvim"
-fi
-
 if [ -f "/usr/bin/vim" ] ; then
     export EDITOR="vim"
 fi
@@ -31,6 +27,8 @@ fi
 if [ -f "$HOME/.cargo/bin/bat" ] ; then
     alias cat="bat"
 fi
+
+export PATH=~/.npm-global/bin:$PATH
 
 alias notebook="~/.local/bin/jupyter-notebook --no-browser"
 alias DOOM="tmux new -d '$HOME/.emacs.d/bin/doom run'"
