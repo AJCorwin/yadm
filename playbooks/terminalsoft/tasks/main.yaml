@@ -29,4 +29,5 @@
       - nodejs
       - neovim
       - exa
+      - snapd
   become: true

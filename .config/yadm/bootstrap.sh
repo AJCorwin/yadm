@@ -22,6 +22,7 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/$USER"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
 
