@@ -14,5 +14,5 @@ ZSH_CUSTOM=$HOME/.config/zsh/themes/
 plugins=(git)
 
 
-source "$HOME/.profile"
+source $HOME/.profile
 source $HOME/.oh-my-zsh/oh-my-zsh.sh

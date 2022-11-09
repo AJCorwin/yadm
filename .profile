@@ -18,7 +18,7 @@ if [ -d "$HOME/doom/" ] ; then
     export DOOMDIR="$HOME/.config/doom/"
 fi
 
-if [ -f "/usr/bin/exa" ] ; then
+if [ -f "$HOME/bin/exa" ] ; then
     alias ls="exa"
     alias ll="exa -alh"
     alias tree="exa --tree"
@@ -39,4 +39,4 @@ alias tree="exa --tree"
 alias zconf="vim ~/.zshrc"
 alias proconf="vim ~/.profile"
 export DOOMDIR="$HOME/.config/doom"
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
