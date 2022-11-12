@@ -18,7 +18,7 @@ if [ -d "$HOME/doom/" ] ; then
     export DOOMDIR="$HOME/.config/doom/"
 fi
 
-if [ -f "/bin/exa" ] ; then
+if [ -f "/usr/bin/exa" ] ; then
     alias ls="exa --grid --icons --color=always"
     alias ll="exa alh --long --color=always --icons"
     alias tree="exa --tree --long --color=always --icons"

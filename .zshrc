@@ -13,6 +13,8 @@ ZSH_CUSTOM=$HOME/.config/zsh/themes/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-
-source $HOME/.profile
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+if [ -f ~/.profile ]; then
+	. ~/.profile
+fi
