@@ -5,7 +5,6 @@ set -e
 cd $HOME
 sudo apt -y update
 sudo apt remove neovim -y
-sudo apt remove node.js -y
 
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt-add-repository --yes ppa:neovim-ppa/stablesudo
