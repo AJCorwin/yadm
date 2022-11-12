@@ -19,10 +19,12 @@
       - bat
       - fd-find
       - ripgrep
+      - make
       - cmake
       - libtool
       - libvterm-dev
       - htop
+      - gcc
       - g++
       - make
       - npm
@@ -30,4 +32,5 @@
       - neovim
       - exa
       - snapd
+      - python3-neovim
   become: true

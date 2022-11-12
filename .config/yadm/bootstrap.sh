@@ -5,10 +5,12 @@ set -e
 cd $HOME
 sudo apt -y update
 sudo apt remove neovim -y
+sudo apt remove node.js -y
 
 sudo apt-add-repository --yes ppa:ansible/ansible
 sudo apt-add-repository --yes ppa:neovim-ppa/stablesudo
 sudo apt-add-repository --yes ppa:kelleyk/emacs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
 
 sudo apt -y update
 sudo apt install ansible-core
@@ -26,6 +28,8 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/$USER"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
