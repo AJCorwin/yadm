@@ -4,14 +4,18 @@
 set -e
 cd $HOME
 sudo apt -y update
+sudo apt remove neovim -y
+
 sudo apt-add-repository --yes ppa:ansible/ansible
+sudo apt-add-repository --yes ppa:neovim-ppa/stablesudo
+sudo apt-add-repository --yes ppa:kelleyk/emacs
+
 sudo apt -y update
 sudo apt install ansible-core
 sudo apt -y install yadm
 mkdir $HOME/Github-Repos
 mkdir $HOME/Code
 yadm clone https://github.com/AJCorwin/yadm.git -b main
-sudo add-apt-repository --yes ppa:kelleyk/emacs
 
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"

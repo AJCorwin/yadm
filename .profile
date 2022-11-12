@@ -1,13 +1,13 @@
-if [ -f "/usr/bin/nvim" ] ; then
-alias vim="/usr/bin/nvim"
+if [ -f "$HOME/.local/bin/lvim" ] ; then
+  alias vim="$HOME/.local/bin/lvim"
 fi
 
 if [ -f "/usr/bin/vim" ] ; then
-    export EDITOR="vim"
+	export EDITOR="vim"
 fi
 
-if [ -f "$HOME/.local/bin/lvim" ] ; then
-  alias vim="$HOME/.local/bin/lvim"
+if [ -f "/usr/bin/nvim" ]; then
+	alias vim"usr/bin/nvim"
 fi
 
 if [ -d "$HOME/.emacs.d/bin" ] ; then
