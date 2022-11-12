@@ -13,7 +13,9 @@ sleep 5
 sudo apt-add-repository --yes ppa:kelleyk/emacs
 sleep 5
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
-
+wait 5
+sudo service packagekit restart
+wait 5
 sudo apt -y update
 sudo apt install ansible-core
 sudo apt -y install yadm
