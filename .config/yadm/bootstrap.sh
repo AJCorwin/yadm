@@ -7,7 +7,7 @@ sudo apt -y update
 sudo apt remove neovim -y
 
 sudo apt-add-repository --yes ppa:ansible/ansible
-sudo apt-add-repository --yes ppa:neovim-ppa/stablesudo
+sudo apt-add-repository --yes ppa:neovim-ppa/stable
 sudo apt-add-repository --yes ppa:kelleyk/emacs
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
 
