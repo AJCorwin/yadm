@@ -4,6 +4,7 @@
 set -e
 cd $HOME
 sudo apt -y update
+sudo apt -y upgrade
 sudo apt remove neovim -y
 
 sudo apt-add-repository --yes ppa:ansible/ansible
@@ -13,8 +14,6 @@ sleep 5
 sudo apt-add-repository --yes ppa:kelleyk/emacs
 sleep 5
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
-wait 5
-sudo service packagekit restart
 wait 5
 sudo apt -y update
 sudo apt install ansible-core
