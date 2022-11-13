@@ -12,9 +12,9 @@ sudo apt-add-repository --yes ppa:neovim-ppa/unstable
 sleep 5
 sudo apt-add-repository --yes ppa:kelleyk/emacs
 sleep 5
-sudo apt -y update
-sudo apt -y install ansible-core
-sudo apt -y install yadm
+sudo apt update -y
+sudo apt install -y ansible-core
+sudo apt install -y yadm
 mkdir $HOME/Github-Repos
 mkdir $HOME/Code
 yadm clone https://github.com/AJCorwin/yadm.git -b main
@@ -30,7 +30,7 @@ cd $HOME
 yadm checkout "/home/$USER"
 source .zshrc
 nvm install node
-LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
+LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 chsh -s $(which zsh)
