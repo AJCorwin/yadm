@@ -13,7 +13,7 @@ sleep 5
 sudo apt-add-repository --yes ppa:kelleyk/emacs
 sleep 5
 sudo apt -y update
-sudo apt install ansible-core
+sudo apt -y install ansible-core
 sudo apt -y install yadm
 mkdir $HOME/Github-Repos
 mkdir $HOME/Code
