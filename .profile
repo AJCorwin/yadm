@@ -6,8 +6,8 @@ if [ -f "/usr/bin/vim" ] ; then
 	export EDITOR="vim"
 fi
 
-if [ -f "/usr/bin/nvim" ]; then
-	alias vim="usr/bin/nvim"
+if [ -f "/bin/nvim" ]; then
+	alias vim="/bin/nvim"
 fi
 
 if [ -d "$HOME/.emacs.d/bin" ] ; then
