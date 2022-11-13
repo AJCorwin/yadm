@@ -40,3 +40,6 @@
       - snapd
       - python3-neovim
   become: true
+
+- name: Cargo installs bat
+  ansible.builtin.shell: cargo install --locked bat

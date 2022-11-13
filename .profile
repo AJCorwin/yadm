@@ -26,7 +26,7 @@ if [ -f "/usr/bin/exa" ] ; then
     alias lt="exa --tree --level=2 --color=always --icons"
 fi
 
-if [ -f "$HOME/.cargo/bin/bat" ] ; then
+if [ -f "$HOME/.local/share/cargo/bin/bat" ] ; then
     alias cat="bat"
 fi
 
