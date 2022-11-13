@@ -15,8 +15,15 @@ sleep 5
 sudo apt update -y
 sudo apt install -y ansible-core
 sudo apt install -y yadm
-mkdir $HOME/Github-Repos
-mkdir $HOME/Code
+
+if [ ! -d $HOME/Github-Repos ]; then
+  mkdir -p $HOME/Github-Repos;
+fi
+
+if [ ! -d $HOME/Code ]; then
+  mkdir -p $HOME/Code;
+fi
+
 yadm clone https://github.com/AJCorwin/yadm.git -b main
 
 CONFIG_DIR="$HOME/playbooks"
