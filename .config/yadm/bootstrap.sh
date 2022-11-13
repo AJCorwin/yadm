@@ -4,10 +4,6 @@
 set -e
 cd $HOME
 
-CONFIG_DIR="$HOME/playbooks"
-DOTFILES_DIR="$HOME/.config"
-SSH_DIR="$HOME/.ssh"
-
 sudo apt -y update
 sudo apt remove neovim -y
 
@@ -46,6 +42,10 @@ else
         echo "$yadm_repo does not exist. Will pull it from github"
         yadm clone https://github.com/AJCorwin/yadm.git -b main
 fi
+
+CONFIG_DIR="$HOME/playbooks"
+DOTFILES_DIR="$HOME/.config"
+SSH_DIR="$HOME/.ssh"
 
 #### Original Script Below ####
 cd "$HOME/playbooks"
