@@ -11,12 +11,12 @@ ansible_ppa=ansible/ansible
 if ! grep -q "^deb .*$ansible_ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     sudo apt-add-repository --yes ppa:ansible/ansible
     sleep 5
-    sudo apt install -y ansible core
+    sudo apt install -y ansible-core
 fi
 sleep 5
 
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' "YADM"|grep "install ok installed")
 YADM_PKG="yadm"
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $YADM_PKG|grep "install ok installed")
 echo Checking for $YADM_PKG: $PKG_OK
 if [ "" = "$PKG_OK" ]; then
   echo "No $YADM_PKG. Setting up $YADM_PKG."
