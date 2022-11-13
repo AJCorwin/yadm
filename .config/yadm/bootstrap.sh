@@ -27,7 +27,7 @@ SSH_DIR="$HOME/.ssh"
 cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
-yadm checkout "/home/$USER"
+#yadm checkout "/home/$USER"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -36,6 +36,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
+yadm checkout "/home/$USER"
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
