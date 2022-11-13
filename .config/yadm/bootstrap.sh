@@ -28,7 +28,7 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 yadm checkout "/home/$USER"
-source .zshrc
+zsh .zshrc
 nvm install node
 LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
