@@ -7,7 +7,7 @@ if [ -f "/usr/bin/vim" ] ; then
 fi
 
 if [ -f "/usr/bin/nvim" ]; then
-	alias vim"usr/bin/nvim"
+	alias vim="usr/bin/nvim"
 fi
 
 if [ -d "$HOME/.emacs.d/bin" ] ; then
@@ -29,6 +29,9 @@ fi
 if [ -f "$HOME/.cargo/bin/bat" ] ; then
     alias cat="bat"
 fi
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=~/.npm-global/bin:$PATH
 
