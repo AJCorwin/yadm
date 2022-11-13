@@ -3,18 +3,32 @@
 # Install Enough to run Ansible
 set -e
 cd $HOME
+
+CONFIG_DIR="$HOME/playbooks"
+DOTFILES_DIR="$HOME/.config"
+SSH_DIR="$HOME/.ssh"
+
 sudo apt -y update
 sudo apt remove neovim -y
 
-sudo apt-add-repository --yes ppa:ansible/ansible
+ansible_ppa=ansible/ansible
+if ! grep -q "^deb .*$ansible_ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
+    sudo apt-add-repository --yes ppa:ansible/ansible
+    sleep 5
+    sudo apt install -y ansible core
+fi
 sleep 5
-sudo apt-add-repository --yes ppa:neovim-ppa/unstable
+
+YADM_PKG="yadm"
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $YADM_PKG|grep "install ok installed")
+echo Checking for $YADM_PKG: $PKG_OK
+if [ "" = "$PKG_OK" ]; then
+  echo "No $YADM_PKG. Setting up $YADM_PKG."
+  sudo apt-get --yes install $YADM_PKG
+fi
 sleep 5
-sudo apt-add-repository --yes ppa:kelleyk/emacs
-sleep 5
+
 sudo apt update -y
-sudo apt install -y ansible-core
-sudo apt install -y yadm
 
 if [ ! -d $HOME/Github-Repos ]; then
   mkdir -p $HOME/Github-Repos;
@@ -24,11 +38,14 @@ if [ ! -d $HOME/Code ]; then
   mkdir -p $HOME/Code;
 fi
 
-yadm clone https://github.com/AJCorwin/yadm.git -b main
-
-CONFIG_DIR="$HOME/playbooks"
-DOTFILES_DIR="$HOME/.config"
-SSH_DIR="$HOME/.ssh"
+yadm_repo=$HOME/.local/share/yadm/repo.git
+if [ -e "$yadm_repo" ]; then
+        echo "$yadm_repo exists, will pull latest version"
+        yadm pull --force
+else
+        echo "$yadm_repo does not exist. Will pull it from github"
+        yadm clone https://github.com/AJCorwin/yadm.git -b main
+fi
 
 #### Original Script Below ####
 cd "$HOME/playbooks"

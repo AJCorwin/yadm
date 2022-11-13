@@ -5,6 +5,16 @@
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
+- name: Add Neovim to repository
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/unstable
+  become: true
+
+- name: Add Emacs to repository
+  ansible.builtin.apt_repository:
+    repo: ppa:kelleyk/emacs
+  become: true
+
 - name: Install default terminal software
   ansible.builtin.apt:
     pkg:
