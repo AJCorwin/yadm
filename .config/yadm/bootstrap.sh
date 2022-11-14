@@ -15,8 +15,8 @@ if ! grep -q "^deb .*$ansible_ppa" /etc/apt/sources.list /etc/apt/sources.list.d
 fi
 sleep 5
 
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' "YADM"|grep "install ok installed")
 YADM_PKG="yadm"
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $YADM_PKG|grep "install ok installed")
 echo Checking for $YADM_PKG: $PKG_OK
 if [ "" = "$PKG_OK" ]; then
   echo "No $YADM_PKG. Setting up $YADM_PKG."
