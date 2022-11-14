@@ -5,7 +5,18 @@
 cd $HOME
 
 sudo apt -y update
-sudo apt remove neovim -y
+
+# Check if nvim 0.9 is installed, if it is the wrong version. Uninstall nvim
+has_nvim=$(command -v nvim >/dev/null)
+nvim_version=$(nvim --version | head -1 | grep -o '[0-9]\.[0-9]')
+if ! $has_nvim; then
+  echo "Nvim is not installed"
+elif [ $(echo $nvim_version >= 0.9 | bc -l) ]; then
+     echo "Wrong version of Nvim is installed"
+     sudo apt remove neovim -y
+else
+     echo "Nvim version 0.9 or greater is installed"
+fi
 
 ansible_ppa=ansible/ansible
 if ! grep -q "^deb .*$ansible_ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
