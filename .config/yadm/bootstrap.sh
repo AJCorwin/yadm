@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install Enough to run Ansible
-set -e
+#set -e
 cd $HOME
 
 sudo apt -y update
@@ -16,7 +16,7 @@ fi
 sleep 5
 
 YADM_PKG="yadm"
-PKG_OK=$(dpkg-query -W --showformat='${Status}' $YADM_PKG 2> /dev/null)
+PKG_OK=$(dpkg-query -W --showformat='${Status}' $YADM_PKG)
 echo "Checking for $YADM_PKG: $PKG_OK"
 if [ "" = "$PKG_OK" ]; then
   echo "No $YADM_PKG. Setting up $YADM_PKG."
