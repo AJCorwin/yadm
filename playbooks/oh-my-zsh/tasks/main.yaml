@@ -1,9 +1,17 @@
 ---
-- name: Checking for existing install
+- name: check to see if oh-my-zsh is installed
   stat:
-    path: "$HOME/.oh-my-zsh"
-  register: install
-  become: true
+    path: $HOME/.oh-my-zsh/oh-my-zsh.sh
+  register: ohmyzsh
+
+- debug:
+    msg: "oh-my-zsh is installed"
+  when: ohmyzsh.stat.exists
+
+- debug:
+    msg: "oh-my-zsh is not installed"
+  when: not ohmyzsh.stat.exists  
 
 - name: Install Oh-My-ZSH 
   ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  when: not ohmyzsh.stat.exists
