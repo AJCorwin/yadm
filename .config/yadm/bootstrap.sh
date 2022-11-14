@@ -16,12 +16,15 @@ fi
 sleep 5
 
 YADM_PKG="yadm"
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $YADM_PKG|grep "install ok installed")
+PKG_OK=$(dpkg-query -W --showformat='${Status}' $YADM_PKG)
 echo Checking for $YADM_PKG: $PKG_OK
-if [ -z = "$PKG_OK" ]; then
+if [ "" = "$PKG_OK" ]; then
   echo "No $YADM_PKG. Setting up $YADM_PKG."
   sudo apt-get --yes install $YADM_PKG
+else
+  echo "It's installed already!"
 fi
+
 sleep 5
 
 sudo apt update -y
