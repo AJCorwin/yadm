@@ -76,7 +76,7 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node
 
-curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh [--[yes-]install-dependencies ] | LV_BRANCH='release-1.2/neovim-0.8' bash
+#curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh [--[yes-]install-dependencies ] | LV_BRANCH='release-1.2/neovim-0.8' bash
 
 yadm checkout "/home/$USER"
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
