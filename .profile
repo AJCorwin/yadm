@@ -1,5 +1,5 @@
-if [ -f "/bin/nvim" ]; then
-	alias vim="/bin/nvim"
+if [ -f "usr/bin/nvim" ]; then
+	alias vim="usr/bin/nvim"
 fi
 
 if [ -f ".local/bin/lvim" ]; then

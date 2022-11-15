@@ -19,8 +19,8 @@ if [ -f ~/.vimrc ]; then
 	. ~/.vimrc
 fi
 
-if [ -f ~/.config/nvim/init.vim ]; then
-	. ~/.config/nvim/init.vim
+if [ -f ~/.config/nvim/init.lua ]; then
+	. ~/.config/nvim/init.lua
 fi
 
 if [ -f ~/.profile ]; then
