@@ -2,11 +2,6 @@ if [ -f "usr/bin/nvim" ]; then
 	alias vim="usr/bin/nvim"
 fi
 
-if [ -f ".local/bin/lvim" ]; then
-	export PATH=/home/$USER/.local/bin:$PATH
-	alias vim=".local/bin/lvim"
-fi
-
 if [ -f "/usr/bin/vim" ] ; then
 	export EDITOR="vim"
 fi

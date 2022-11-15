@@ -52,8 +52,12 @@
 
 ;; melpa.org for packages
 (package! tldr)
-(package! treemacs-evil)
 ;;(package! jupyter)
 (package! treemacs-evil)
-;;(package! ein)
+(package! ein)
 (package! ob-ipython)
+(package! all-the-icons)
+(package! unicode-fonts)
+(package! doom-themes)
+(package! rust-mode)
+(package! golden-ratio)
