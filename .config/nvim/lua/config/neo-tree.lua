@@ -17,6 +17,9 @@ import("neo-tree", function(neoTree)
 			filtered_items = {
 				always_show = {
 					".gitignore",
+          visible = true,
+          hide_dotfiles = false,
+          ".*",
 				},
 				never_show = {
 					".git",

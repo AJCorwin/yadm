@@ -1,7 +1,3 @@
-if [ -f "/usr/bin/vim" ] ; then
-	export EDITOR="vim"
-fi
-
 if [ -f "/bin/nvim" ]; then
 	alias vim="/bin/nvim"
 fi
@@ -9,6 +5,10 @@ fi
 if [ -f ".local/bin/lvim" ]; then
 	export PATH=/home/$USER/.local/bin:$PATH
 	alias vim=".local/bin/lvim"
+fi
+
+if [ -f "/usr/bin/vim" ] ; then
+	export EDITOR="vim"
 fi
 
 if [ -d "$HOME/.emacs.d/bin" ] ; then
