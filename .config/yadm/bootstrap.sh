@@ -102,13 +102,13 @@ fi
 
 yadm checkout "/home/$USER"
 #curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-chsh -s $(which zsh)
-sudo apt update -y  && sudo apt upgrade -y
-sleep 5
-#nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 nvim --headless +PlugInstall +qall
+sleep 5
 nvim --headless +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
 sleep 5
-echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
+chsh -s $(which zsh)
 
+sudo apt update -y  && sudo apt upgrade -y
+sleep 5
+echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
 zsh
