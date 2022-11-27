@@ -1,24 +1,29 @@
 ---
-- name: Add Sys76 Nvidia Drivers
-  hosts: localhost
-  become: yes
-  gather_facts: yes
-  tasks:
-    - block:
-        # For the latest NVIDIA drivers.
-        - name: add system-76 nvidia repo
-          ansible.builtin.apt_repository:
-            repo: ppa:system76-dev/stable
-          become: true
+- name: Fix any broken installs
+  ansible.builtin.shell: apt --fix-broken install -y
+  become: true
+  when: ansible_distribution == "Pop!_OS"
 
-        - name: fill os information
-          ansible.builtin.apt:
-            update_cache: yes
-          become: true
+- name: Full apt upgrade
+  ansible.builtin.shell: apt full-upgrade -y
+  become: true
+  when: ansible_distribution == "Pop!_OS"
 
-        - name: Install System76-driver
-          ansible.builtin.apt:
-            pkg:
-              - system76-driver
-          become: true
-      when: ansible_distribution == "Pop!_OS"
+- name: Update All Packages
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Pop!_OS"
+
+- name: Add PopOS Nvidia Driver
+  ansible.builtin.apt_repository:
+    repo: ppa:system76-dev/stable
+  become: true
+  when: ansible_os_family == "Pop!_OS"
+
+- name: Install System-76 Driver
+  ansible.builtin.package:
+    name: system76-driver
+  become: true
+  when: ansible_distribution == "Pop!_OS"
