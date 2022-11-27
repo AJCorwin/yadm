@@ -6,3 +6,5 @@ if [ -f "$XDG_CONFIG_HOME/bash/bashrc" ]; then
 fi
 
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

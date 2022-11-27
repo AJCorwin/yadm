@@ -106,7 +106,8 @@ chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
 sleep 5
 #nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-nvim +PlugInstall +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
+nvim --headless +PlugInstall +qall
+nvim --headless +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
 sleep 5
 echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
 

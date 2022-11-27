@@ -26,3 +26,5 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 if [ -f ~/.profile ]; then
 	. ~/.profile
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
