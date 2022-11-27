@@ -60,6 +60,14 @@ else
         yadm clone https://github.com/AJCorwin/yadm.git -b main
 fi
 
+if [ ! -f $HOME/.local/share/nvim/site/autoloadplug.vim ]; then
+	echo "Vim plug is not installed, it will install now"
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+else
+	echo "vim plug is installed"
+fi
+
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
@@ -97,7 +105,8 @@ yadm checkout "/home/$USER"
 chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
 sleep 5
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+#nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim +PlugInstall +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
 sleep 5
 echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
 

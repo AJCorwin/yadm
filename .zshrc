@@ -15,13 +15,13 @@ plugins=(git)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
-if [ -f ~/.vimrc ]; then
-	. ~/.vimrc
-fi
-
-if [ -f ~/.config/nvim/init.lua ]; then
-	. ~/.config/nvim/init.lua
-fi
+#if [ -f ~/.vimrc ]; then
+#	. ~/.vimrc
+#fi
+#
+#if [ -f ~/.config/nvim/init.lua ]; then
+#	. ~/.config/nvim/init.lua
+#fi
 
 if [ -f ~/.profile ]; then
 	. ~/.profile
