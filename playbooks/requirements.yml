@@ -1,6 +1,6 @@
 - src: terminalsoft
 - src: python
-- src: BFG-Division
+#- src: BFG-Division
 - src: oh-my-zsh
 - src: nvim
 - src: final-step

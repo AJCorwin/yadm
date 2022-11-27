@@ -1,6 +1,19 @@
 ---
+- name: Add Emacs to repository
+  ansible.builtin.apt_repository:
+    repo: ppa:kelleyk/emacs
+  become: true
+
 - name: install pexpect
   ansible.builtin.shell: pip install pexpect
+  become: true
+
+- name: Install required packages
+  ansible.builtin.apt:
+    pkg:
+        - ripgrep
+        - fd-find
+        - emacs28
   become: true
 
 - name: Go to home directory

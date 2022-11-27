@@ -1,16 +1,10 @@
 ---
-- name: Add Emacs to repository
-  ansible.builtin.apt_repository:
-    repo: ppa:kelleyk/emacs
-  become: true
-
 - name: Install default terminal software
   ansible.builtin.apt:
     pkg:
       - powerline
       - gconf-service
       - whois
-      - emacs28
       - pip
       - fonts-hack-ttf
       - dos2unix
@@ -22,8 +16,6 @@
       - curl
       - cargo
       - bat
-      - fd-find
-      - ripgrep
       - make
       - cmake
       - libtool
