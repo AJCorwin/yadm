@@ -6,21 +6,6 @@ cd $HOME
 
 sudo apt -y update
 
-command -v nvim >/dev/null
-
-if [[ $? -ne 0 ]]; then
-    echo "Nvim is not installed"
-else
-    nvim_version=$(nvim --version | head -1 | grep -o '[0-9]\.[0-9]')
-
-    if (( $(echo "$nvim_version < 0.9 " |bc -l) )); then
-            echo "Wrong version of Nvim is installed"
-            sudo apt remove neovim -y
-    else
-        echo "Nvim version 0.9 or greater is installed"
-    fi
-fi
-
 ansible_ppa=ansible/ansible
 if ! grep -q "^deb .*$ansible_ppa" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     sudo apt-add-repository --yes ppa:ansible/ansible
@@ -60,14 +45,6 @@ else
         yadm clone https://github.com/AJCorwin/yadm.git -b main
 fi
 
-if [ ! -f $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
-	echo "Vim plug is not installed, it will install now"
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-else
-	echo "vim plug is installed"
-fi
-
 CONFIG_DIR="$HOME/playbooks"
 DOTFILES_DIR="$HOME/.config"
 SSH_DIR="$HOME/.ssh"
@@ -77,12 +54,6 @@ cd "$HOME/playbooks"
 ansible-playbook --diff --extra-vars "@$CONFIG_DIR/values.yaml" "$DOTFILES_DIR/main.yaml" "$@" --ask-become-pass -vv
 cd $HOME
 #yadm checkout "/home/$USER"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-nvm install node
 
 # set up ssh key
 if [ ! -f "$SSH_DIR/id_rsa" ]; then
@@ -98,17 +69,9 @@ if [ ! -f "$SSH_DIR/id_rsa" ]; then
     batcat "$SSH_DIR/id_rsa.pub"
 fi
 
-#curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh [--[yes-]install-dependencies ] | LV_BRANCH='release-1.2/neovim-0.8' bash
-
 yadm checkout "/home/$USER"
-#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-nvim --headless +PlugInstall +qall
-sleep 5
-nvim --headless +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
-sleep 5
 chsh -s $(which zsh)
 
-sudo apt update -y  && sudo apt upgrade -y
 sleep 5
 echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
 zsh

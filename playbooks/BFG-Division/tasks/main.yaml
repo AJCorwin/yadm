@@ -24,6 +24,3 @@
 
 - name: Run Doom Doctor
   ansible.builtin.shell: ~/.emacs.d/bin/doom doctor
-    # - name: Cargo install exa
-    #  ansible.builtin.shell: cargo install exa
-    #  become: true

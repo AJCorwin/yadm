@@ -1,15 +1,4 @@
 ---
-- name: Install nvm
-  ansible.builtin.shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-
-- name: Add Neovim to repository
-  ansible.builtin.apt_repository:
-    repo: ppa:neovim-ppa/unstable
-  become: true
-
 - name: Add Emacs to repository
   ansible.builtin.apt_repository:
     repo: ppa:kelleyk/emacs
@@ -43,12 +32,8 @@
       - gcc
       - g++
       - make
-      - npm
-      - nodejs
-      - neovim
       - exa
       - snapd
-      - python3-neovim
   become: true
 
 - name: Cargo installs bat

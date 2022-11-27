@@ -1,0 +1,36 @@
+---
+- name: Add Neovim to repository
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/unstable
+  become: true
+
+
+- name: install latest version of Nvim
+  ansible.builtin.apt:
+    name: neovim
+    state: latest
+  become: true
+
+- name: install python support
+  ansible.builtin.apt:
+    name: python3-neovim
+  become: true
+
+- name: Install N
+  ansible.builtin.shell: curl -L https://bit.ly/n-install | bash
+
+- name: Install latest
+  ansible.builtin.shell: n lts
+
+- name: Install Vimplug
+  ansible.builtin.shell: sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+- name: Nvim run PlugInstall
+  ansible.builtin.shell: nvim --headless +PlugInstall +qall
+
+- name: Nvim run language support using COC
+  ansible.builtin.shell: nvim --headless +'CocInstall  coc-html coc-css coc-go coc-python coc-rls coc-sql coc-scala' +qall
+
+
+

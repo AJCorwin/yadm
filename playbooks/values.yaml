@@ -3,3 +3,5 @@ default_roles:
   - python
   - BFG-Division
   - oh-my-zsh
+  - nvim
+  - final-step
