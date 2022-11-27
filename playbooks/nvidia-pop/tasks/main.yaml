@@ -8,6 +8,10 @@
   ansible.builtin.pause:
     minutes: 1
 
+- name: Killall apts
+  ansible.builtin.shell: killall apt apt-get
+  become: true
+
 - name: Full apt upgrade
   ansible.builtin.shell: apt full-upgrade -y
   become: true
@@ -18,6 +22,10 @@
 - name: Pause for 1 minutes to build full upgrade cache
   ansible.builtin.pause:
     minutes: 1
+
+- name: KIllall apts return of the kill
+  ansible.builtin.shell: killall apt apt-get
+  become: true
 
 - name: Update All Packages
   ansible.builtin.apt:
