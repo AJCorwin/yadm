@@ -9,6 +9,7 @@
     minutes: 1
 
 - name: Full apt upgrade
+  retries: 2
   ansible.builtin.shell: apt full-upgrade -y
   become: true
   when: ansible_distribution == "Pop!_OS"
@@ -18,6 +19,7 @@
     minutes: 1
 
 - name: Update All Packages
+  retries: 5
   ansible.builtin.apt:
     name: "*"
     state: latest
