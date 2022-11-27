@@ -36,7 +36,7 @@ if [ "" = "$PKG_OK" ]; then
   echo "No $YADM_PKG. Setting up $YADM_PKG."
   sudo apt-get --yes install $YADM_PKG
 else
-  echo "It's installed already!"
+  echo "YADM is installed already"
 fi
 
 sleep 5
@@ -60,7 +60,7 @@ else
         yadm clone https://github.com/AJCorwin/yadm.git -b main
 fi
 
-if [ ! -f $HOME/.local/share/nvim/site/autoloadplug.vim ]; then
+if [ ! -f $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
 	echo "Vim plug is not installed, it will install now"
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
