@@ -4,10 +4,18 @@
   become: true
   when: ansible_distribution == "Pop!_OS"
 
+- name: Pause for 1 minutes to build app cache
+  ansible.builtin.pause:
+    minutes: 1
+
 - name: Full apt upgrade
   ansible.builtin.shell: apt full-upgrade -y
   become: true
   when: ansible_distribution == "Pop!_OS"
+
+- name: Pause for 1 minutes to build full upgrade cache
+  ansible.builtin.pause:
+    minutes: 1
 
 - name: Update All Packages
   ansible.builtin.apt:
