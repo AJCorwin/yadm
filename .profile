@@ -22,8 +22,8 @@ if [ -f "/usr/bin/exa" ] ; then
     alias lt="exa --tree --level=2 --color=always --icons"
 fi
 
-if [ -f "$HOME/.local/share/cargo/bin/bat" ] ; then
-    alias cat="bat"
+if [ -f "usr/bin/batcat" ] ; then
+    alias cat="batcat"
 fi
 
 export NVM_DIR="$HOME/.nvm"
