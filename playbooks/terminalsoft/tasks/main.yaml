@@ -32,7 +32,7 @@
       - wget
       - curl
       - cargo
-      - bat
+      - batcat
       - fd-find
       - ripgrep
       - make

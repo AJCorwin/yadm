@@ -76,6 +76,15 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node
 
+# set up ssh key
+if [ ! -f "$SSH_DIR/authorized_keys" ]; then
+    mkdir -p "$SSH_DIR"
+    chmod 700 "$SSH_DIR"
+
+    ssh-keygen -b 4096 -t rsa -f "$SSH_DIR/id_rsa" -N "" -C "$USER@$HOSTNAME"
+    batcat "$SSH_DIR/id_rsa.pub" >> "$SSH_DIR/authorized_keys"
+fi
+
 #curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh [--[yes-]install-dependencies ] | LV_BRANCH='release-1.2/neovim-0.8' bash
 
 yadm checkout "/home/$USER"
@@ -84,4 +93,8 @@ chsh -s $(which zsh)
 sudo apt update -y  && sudo apt upgrade -y
 
 echo "\n\nChange your terminal font to hack\nPlease reboot your machine for terminal changes to take affect\n"
+echo "\nBe sure to set your gitconfig!\n"
+echo "git config --global user.name \"John Doe\"\n"
+echo "git config --global user.email johndoe@users.noreply.github.com\n"
+
 zsh
