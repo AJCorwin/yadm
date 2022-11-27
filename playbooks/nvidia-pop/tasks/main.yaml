@@ -11,7 +11,7 @@
 - name: Full apt upgrade
   ansible.builtin.shell: apt full-upgrade -y
   become: true
-  retires: 5
+  retries: 5
   delay: 2
   when: ansible_distribution == "Pop!_OS"
 
@@ -24,7 +24,7 @@
     name: "*"
     state: latest
     update_cache: yes
-  retires: 5
+  retries: 5
   delay: 5
   when: ansible_distribution == "Pop!_OS"
 
