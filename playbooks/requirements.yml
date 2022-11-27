@@ -3,4 +3,5 @@
 #- src: BFG-Division
 - src: oh-my-zsh
 - src: nvim
+- src: nvidia-pop
 - src: final-step

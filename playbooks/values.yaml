@@ -4,4 +4,5 @@ default_roles:
 #  - BFG-Division
   - oh-my-zsh
   - nvim
+  - nvidia-pop
   - final-step

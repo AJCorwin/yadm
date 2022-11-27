@@ -1,0 +1,24 @@
+---
+- name: Add Sys76 Nvidia Drivers
+  hosts: localhost
+  become: yes
+  gather_facts: yes
+  tasks:
+    - block:
+        # For the latest NVIDIA drivers.
+        - name: add system-76 nvidia repo
+          ansible.builtin.apt_repository:
+            repo: ppa:system76-dev/stable
+          become: true
+
+        - name: fill os information
+          ansible.builtin.apt:
+            update_cache: yes
+          become: true
+
+        - name: Install System76-driver
+          ansible.builtin.apt:
+            pkg:
+              - system76-driver
+          become: true
+      when: ansible_distribution == "Pop!_OS"
