@@ -1,7 +1,7 @@
 ---
 - name: Run a full update, upgrade, clean, remove
   ansible.builtin.apt:
-    upgrade: yes
+    update: yes
     update_cache: yes
     autoclean: yes
     autoremove: yes

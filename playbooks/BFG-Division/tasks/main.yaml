@@ -5,7 +5,9 @@
   become: true
 
 - name: install pexpect
-  ansible.builtin.shell: pip install pexpect
+  ansible.builtin.pip:
+    name: 
+      - pexpect
   become: true
 
 - name: Install required packages

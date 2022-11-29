@@ -1,39 +1,33 @@
 ---
 - name: Fix any broken installs
-  ansible.builtin.shell: apt --fix-broken install -y
+  ansible.builtin.apt:
+    name: "*"
+    state: fixed
   become: true
   when: ansible_distribution == "Pop!_OS"
 
-- name: Pause for 1 minutes to build app cache
-  ansible.builtin.pause:
-    minutes: 1
-
-- name: Killall apts
-  ansible.builtin.shell: killall apt apt-get
-  become: true
+- name: Wait until the lock file is removed
+  ansible.builtin.wait_for:
+    path: /var/lock/file/lock
+    state: absent
 
 - name: Full apt upgrade
-  ansible.builtin.shell: apt full-upgrade -y
+  ansible.builtin.apt:
+    upgrade: dist
+    update_cache: yes
   become: true
   retries: 5
   delay: 2
   when: ansible_distribution == "Pop!_OS"
-
-- name: Pause for 1 minutes to build full upgrade cache
-  ansible.builtin.pause:
-    minutes: 1
-
-- name: KIllall apts return of the kill
-  ansible.builtin.shell: killall apt apt-get
-  become: true
 
 - name: Update All Packages
   ansible.builtin.apt:
     name: "*"
     state: latest
     update_cache: yes
-  retries: 5
+  retries: 10
   delay: 5
+  become: true
   when: ansible_distribution == "Pop!_OS"
 
 - name: Add PopOS Nvidia Driver
